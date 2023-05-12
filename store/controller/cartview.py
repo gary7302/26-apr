@@ -61,3 +61,20 @@ def deletecartitem(request):
         cartitem.delete()
         return JsonResponse({'status':'Deleted Successfully'})
     return redirect('/')
+
+@login_required(login_url='loginpage')
+def chinesecart(request):
+    return render(request,'chinese-store/cart.html')
+
+@login_required(login_url='loginpage')
+def hindicart(request):
+    return render(request,'hindi-store/cart.html')
+
+@login_required(login_url='loginpage')
+def spanishcart(request):
+    return render(request,'spanish-store/cart.html')
+
+@login_required(login_url='frenchlogin')
+def frenchcart(request):
+    return render(request,'french-store/cart.html')
+

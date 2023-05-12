@@ -1,0 +1,32 @@
+{% extends 'french-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">À propos de nous</h4>
+            <p>Nous sommes le temple américain de l'Oncle Sam, situé à Los Angeles, en Californie, avec des succursales à Taiwan. Défendez la prévention et le traitement non invasifs du cancer, fournissez aux patients des autocollants gratuits contre le cancer, gratuits à vie. Aidez les malades du cancer. Réduisez la douleur et prolongez la vie sans dépenser un centime. Au service de 50 millions de patients atteints de cancer dans le monde, nous n'acceptons aucun don.</p>
+            <p class="para">        La fondatrice de l'association, Lini Chiang, est âgée de 71 ans. Cinq membres de sa famille souffraient de différents cancers. Quatre d'entre eux sont décédés. L'espérance de vie moyenne des membres décédés de la famille est de 54 ans. Déterminé à utiliser son invention pour aider gratuitement les patients atteints de cancer dans le monde entier.</p>
+            <p>      Les patchs adhésifs contiennent les principes actifs des plantes médicinales et sont collés sur les points d'acupuncture concernés grâce à la technologie nano-transdermique. Les médicaments peuvent être administrés par les méridiens pour atteindre les cellules cancéreuses et inhiber leur croissance. Dans le même temps, la méthode de collage symétrique a été inventée et les patchs froids et chauds ont été collés des deux côtés des méridiens symétriques, afin que l'immunité des personnes puisse absorber ces deux types de propriétés médicinales et en faire automatiquement un usage efficace, ce qui est meilleur que le mélange oral traditionnel et l'ébullition. Soupe aux herbes, plus efficace</p>
+            <p class="para1">Le fondateur a également inventé www.fatebook.org, grâce auquel les informations sur l'anniversaire des personnes peuvent être utilisées pour analyser statistiquement les défauts génétiques des personnes et trouver des moyens de les améliorer. Par exemple, ce site Web peut immédiatement trouver la cause de la maladie de Parkinson de Bill Gates, utiliser nos patchs spéciaux, et après une semaine de collage, vous pouvez voir une amélioration significative du rapport de test sanguin</p>
+            <p>       Nos patchs peuvent être collés sur les points d'acupuncture de la plante des pieds, et la fièvre sera réduite immédiatement en une demi-heure. Il est sûr, efficace, rapide et non invasif, et a beaucoup de preuves cliniques</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'frenchcomment' data.id %}" class="btn btn-primary">User Forum</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

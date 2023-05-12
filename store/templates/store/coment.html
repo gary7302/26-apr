@@ -17,6 +17,7 @@
         <p>No Comments Yet...Write the first comment</p>
       {% else %}
         {% for comment in eachProduct.comments.all %}
+      <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
           <h5>{{ comment.commenter_name }}</h5>
           <h6>{{ comment.comment_body }}</h6>
       <p>{{ comment.created_at }}</p>
