@@ -50,6 +50,7 @@ urlpatterns = [
     path('french-getpatch',frenchview.frenchgetpatch,name='french-getpatch'),
     path('usepatch',usepatch,name='usepatch'),
     path('chinese-usepatch',chineseview.chineseusepatch,name='chinese-usepatch'),
+    path('french-usepatch',frenchview.frenchusepatch,name='french-usepatch'),
     path('hindicomment/<int:id>',hindiview.hindicomment,name='hindicomment'),
     path('hindiaddComment/<int:id>',hindiview.hindiaddcomment,name='hindiaddComment'),
     path('spanishcomment/<int:id>',spanishview.spanishcomment,name='spanishcomment'),

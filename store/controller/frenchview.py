@@ -50,3 +50,6 @@ def frenchdetails(request):
 
 def frenchgetpatch(request):
     return render(request,'french-store/getpatch.html')
+
+def frenchusepatch(request):
+    return render(request,'french-store/usepatch.html')
