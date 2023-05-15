@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="/">Home</a>
+          <a class="nav-link  active" aria-current="page" href="french">Maison</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="logout">Logout</a></li>
+            <li><a class="dropdown-item" href="logout">Se déconnecter</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="frenchlogin">Login</a>
+          <a class="nav-link active" href="frenchlogin">Connexion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="french-register">SignUp</a>
+          <a class="nav-link active" href="french-register">S'inscrire</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           langages
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -71,7 +71,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           Types de cancer
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -111,18 +111,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="french-getpatch">GetPatch</a>
+          <a class="nav-link active" href="french-getpatch">Obtenir le correctif</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="usepatch">UsePatch</a>
+          <a class="nav-link active" href="usepatch">UtiliserPatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="frenchdetails">Theory</a>
+          <a class="nav-link active" href="frenchdetails">Théorie</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="frenchcart">Cart</a>
+          <a class="nav-link active" href="frenchcart">Chariot</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="shopping">紫薇團購</a>

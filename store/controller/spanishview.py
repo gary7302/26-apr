@@ -47,3 +47,9 @@ def register(request):
                 messages.warning(request,'This username altreay in use. Please choose another')
     context={'form':form}
     return render(request,'spanish-store/auth/register.html',context)
+
+def spanishgetpatch(request):
+    return render(request,'spanish-store/getpatch.html')
+
+def spanishusepatch(request):
+    return render(request,'spanish-store/usepatch.html')

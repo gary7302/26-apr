@@ -102,7 +102,7 @@ def maincheckout(request):
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'store/maincheckout.html',context)
 
-@login_required(login_url='loginpage')
+@login_required(login_url='chineselogin')
 def chinesemaincheckout(request):
 
     total_price=3
@@ -112,7 +112,7 @@ def chinesemaincheckout(request):
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'chinese-store/maincheckout.html',context)
 
-@login_required(login_url='loginpage')
+@login_required(login_url='hindilogin')
 def hindimaincheckout(request):
 
     total_price=3
@@ -122,7 +122,7 @@ def hindimaincheckout(request):
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'hindi-store/maincheckout.html',context)
 
-@login_required(login_url='loginpage')
+@login_required(login_url='spanishlogin')
 def spanishmaincheckout(request):
 
     total_price=3
@@ -132,7 +132,7 @@ def spanishmaincheckout(request):
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'spanish-store/maincheckout.html',context)
 
-@login_required(login_url='loginpage')
+@login_required(login_url='frenchlogin')
 def frenchmaincheckout(request):
 
     total_price=3
@@ -141,3 +141,13 @@ def frenchmaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'french-store/maincheckout.html',context)
+
+@login_required(login_url='arabiclogin')
+def arabicmaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'arabic-store/maincheckout.html',context)

@@ -48,7 +48,7 @@ def logoutpage(request):
 def frenchloginpage(request):
     if request.user.is_authenticated:
         messages.warning(request,'You are already logged in')
-        return redirect('/')
+        return redirect('/french')
     else:
 
         if request.method == 'POST':
@@ -65,3 +65,82 @@ def frenchloginpage(request):
                 return redirect('/frenchlogin')
         return render(request, 'french-store/auth/login.html')
 
+def hindiloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/hindi')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/hindi')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/hindilogin')
+        return render(request, 'hindi-store/auth/login.html')
+
+def chineseloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/chinese')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/chinese')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/chineselogin')
+        return render(request, 'chinese-store/auth/login.html')
+
+def spanishloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/spanish')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/spanish')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/spanishlogin')
+        return render(request, 'spanish-store/auth/login.html')
+
+def arabicloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/arabic')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/arabic')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/arabiclogin')
+        return render(request, 'arabic-store/auth/login.html')

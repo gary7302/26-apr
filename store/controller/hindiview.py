@@ -47,3 +47,9 @@ def register(request):
                 messages.warning(request,'This username has already taken. Choose different')
     context={'form':form}
     return render(request,'hindi-store/auth/register.html',context)
+
+def hindigetpatch(request):
+    return render(request,'hindi-store/getpatch.html')
+
+def hindiusepatch(request):
+    return render(request,'hindi-store/usepatch.html')
