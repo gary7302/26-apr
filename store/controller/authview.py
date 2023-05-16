@@ -144,3 +144,23 @@ def arabicloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/arabiclogin')
         return render(request, 'arabic-store/auth/login.html')
+
+def bengaliloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/bengali')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/bengali')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/bengalilogin')
+        return render(request, 'bengali-store/auth/login.html')

@@ -11,10 +11,10 @@
       </form>
     </div>
     <div class="col-md-6">
-      <h4>See All comments</h4>
+      <h4>Ver todos los comentarios</h4>
       <hr>
       {% if not eachProduct.spanishcomment.all %}
-        <p>No Comments Yet...Write the first comment</p>
+        <p>Aún no hay comentarios...Escribe el primer comentario</p>
       {% else %}
         {% for comment in eachProduct.spanishcomment.all %}
       <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />

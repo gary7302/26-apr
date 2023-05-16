@@ -6,28 +6,28 @@ from datetime import datetime
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
 
-def arabichome(request):
-    category=ArabicCategory.objects.all()
-    return render(request,'arabic-store/index.html',{'category':category})
+def bengalihome(request):
+    category=BengaliCategory.objects.all()
+    return render(request,'bengali-store/index.html',{'category':category})
 
-def arabiccomment(request,id):
-    eachProduct = ArabicCategory.objects.get(id=id)
+def bengalicomment(request,id):
+    eachProduct = BengaliCategory.objects.get(id=id)
 
-    form = ArabicCommentForm()
+    form = BengaliCommentForm()
     context = {'form': form, 'eachProduct': eachProduct}
-    return render(request, 'arabic-store/coment.html', context)
+    return render(request, 'bengali-store/coment.html', context)
 
-def arabicaddcomment(request,id):
+def bengaliaddcomment(request,id):
     if request.method == "POST":
-        form = ArabicCommentForm(request.POST, request.FILES)
+        form = BengaliCommentForm(request.POST, request.FILES)
         if form.is_valid():
             commenter_name = request.user
             comment_body = form.cleaned_data['comment_body']
             comment_image = form.cleaned_data['comment_image']
-            eachProduct = ArabicCategory.objects.get(id=id)
-            d = ArabicComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,comment_image=comment_image, created_at=datetime.now())
+            eachProduct = BengaliCategory.objects.get(id=id)
+            d = BengaliComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,comment_image=comment_image, created_at=datetime.now())
             d.save()
-            return redirect('arabic')
+            return redirect('bengali')
     return HttpResponse('<h1>We are unable to add your comment</h1>')
 
 def register(request):
@@ -39,17 +39,17 @@ def register(request):
             try:
                 user=User.objects.create_user(username=username,password=form.cleaned_data['password1'])
                 user.save()
-                return redirect('/arabiclogin')
+                return redirect('/bengalilogin')
             except IntegrityError:
                 messages.warning(request,'This username already in use. Please choose another')
     context={'form':form}
-    return render(request,'arabic-store/auth/register.html',context)
+    return render(request,'bengali-store/auth/register.html',context)
 
-def arabicdetails(request):
-    return render(request,'arabic-store/details.html')
+def bengalidetails(request):
+    return render(request,'bengali-store/details.html')
 
-def arabicgetpatch(request):
-    return render(request,'arabic-store/getpatch.html')
+def bengaligetpatch(request):
+    return render(request,'bengali-store/getpatch.html')
 
-def arabicusepatch(request):
-    return render(request,'arabic-store/usepatch.html')
+def bengaliusepatch(request):
+    return render(request,'bengali-store/usepatch.html')

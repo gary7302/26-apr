@@ -1,22 +1,22 @@
-{% extends 'chinese-store/layouts/base.html' %}
+{% extends 'bengali-store/layouts/base.html' %}
 {% block content %}
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <form method="post" action="{% url 'chinese-addcomment' eachProduct.id %}" enctype="multipart/form-data">
+      <form method="post" action="{% url 'bengaliaddcomment' eachProduct.id %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <button class="btn btn-primary" type="submit" >Add comment</button>
+        <button class="btn btn-primary" type="submit" >মন্তব্য যোগ করুন</button>
         <input type="hidden" name="product_id" value="{{eachProduct.id}}">
       {{ form.as_p }}
       </form>
     </div>
     <div class="col-md-6">
-      <h4>查看所有評論</h4>
+      <h4>সব মন্তব্য দেখুন</h4>
       <hr>
-      {% if not eachProduct.chinacomments.all %}
-        <p>還沒有評論...寫下第一條評論</p>
+      {% if not eachProduct.bengalicomment.all %}
+        <p>এখনো কোন মন্তব্য নেই...প্রথম মন্তব্য লিখুন</p>
       {% else %}
-        {% for comment in eachProduct.chinacomments.all %}
+        {% for comment in eachProduct.bengalicomment.all %}
       <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
           <h5>{{ comment.commenter_name }}</h5>
           <h6>{{ comment.comment_body }}</h6>

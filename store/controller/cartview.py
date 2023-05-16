@@ -81,3 +81,7 @@ def frenchcart(request):
 @login_required(login_url='arabiclogin')
 def arabiccart(request):
     return render(request,'arabic-store/cart.html')
+
+@login_required(login_url='bengalilogin')
+def bengalicart(request):
+    return render(request,'bengali-store/cart.html')

@@ -1,0 +1,42 @@
+{% extends 'bengali-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="" class="form-label">ব্যবহারকারীর নাম লিখুন ইমেইল হতে হবে</label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                    <label class="text-danger">{{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">তুমার ইমেইল প্রবেশ করাও</label>
+                    {{form.email}}
+                    {% if form.errors.email %}
+                    <label class="text-danger">{{ form.errors.email}}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">আপনার পাসওয়ার্ড লিখুন</label>
+                    {{form.password1}}
+                    {% if form.errors.password1 %}
+                    <label class="text-danger">{{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">আপনার পাসওয়ার্ড নিশ্চিত</label>
+                    {{form.password2}}
+                    {% if form.errors.password2 %}
+                    <label class="text-danger">{{ form.errors.password2}}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">জমা দিন</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

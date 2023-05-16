@@ -255,3 +255,27 @@ class ArabicComment(models.Model):
 
     def __str__(self):
         return "%s %s" %(self.product.name,self.commenter_name.username)
+
+def get_file_path_bengali(request,filename):
+    original_filename=filename
+    nowTime=datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
+    filename='%s%s' %(nowTime,original_filename)
+    return os.path.join('bengali_uploads/',filename)
+class BengaliCategory(models.Model):
+    slug=models.CharField(max_length=150,null=False,blank=False)
+    name=models.CharField(max_length=150,null=False,blank=False)
+    image=models.ImageField(upload_to=get_file_path_bengali,null=True,blank=True)
+    description=models.TextField(max_length=500,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
+
+class BengaliComment(models.Model):
+    product=models.ForeignKey(BengaliCategory,on_delete=models.CASCADE,related_name="bengalicomment")
+    commenter_name=models.ForeignKey(User,on_delete=models.CASCADE)
+    comment_body=models.TextField()
+    comment_image=models.ImageField(upload_to=get_file_path_bengali,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "%s %s" %(self.product.name,self.commenter_name.username)

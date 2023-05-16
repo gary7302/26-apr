@@ -13,10 +13,10 @@
     <div class="col-md-6">
       <h4>انظر جميع التعليقات</h4>
       <hr>
-      {% if not eachProduct.comments.all %}
+      {% if not eachProduct.arabiccomment.all %}
         <p>لا توجد تعليقات حتى الآن ... اكتب التعليق الأول</p>
       {% else %}
-        {% for comment in eachProduct.comments.all %}
+        {% for comment in eachProduct.arabiccomment.all %}
       <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
           <h5>{{ comment.commenter_name }}</h5>
           <h6>{{ comment.comment_body }}</h6>

@@ -11,10 +11,10 @@
       </form>
     </div>
     <div class="col-md-6">
-      <h4>See All comments</h4>
+      <h4>सभी टिप्पणियाँ देखें</h4>
       <hr>
       {% if not eachProduct.hindicomment.all %}
-        <p>No Comments Yet...Write the first comment</p>
+        <p>अभी तक कोई टिप्पणी नहीं...पहली टिप्पणी लिखें</p>
       {% else %}
         {% for comment in eachProduct.hindicomment.all %}
       <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
