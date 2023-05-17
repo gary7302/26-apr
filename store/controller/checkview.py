@@ -161,3 +161,13 @@ def bengalimaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'bengali-store/maincheckout.html',context)
+
+@login_required(login_url='russianlogin')
+def russianmaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'russian-store/maincheckout.html',context)
