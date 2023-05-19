@@ -1,0 +1,32 @@
+{% extends 'portuguese-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Sobre nós</h4>
+            <p>Somos o Templo do Tio Sam americano, localizado em Los Angeles, Califórnia, com filiais em Taiwan. Defenda a prevenção e o tratamento não invasivo do câncer, forneça aos pacientes adesivos gratuitos de câncer, gratuitos por toda a vida. Ajude os pacientes com câncer. Reduza a dor e prolongue a vida sem gastar um centavo. Atendendo a 50 milhões de pacientes com câncer em todo o mundo, não aceitamos doações.</p>
+            <p class="para">A fundadora da associação, Lini Chiang, tem 71 anos. Cinco membros de sua família sofriam de diferentes tipos de câncer. Quatro deles morreram. A esperança média de vida dos familiares falecidos é de 54 anos. Determinado a usar sua invenção para ajudar pacientes com câncer em todo o mundo gratuitamente.</p>
+            <p>Os adesivos contêm os ingredientes ativos de medicamentos fitoterápicos e são colados nos pontos de acupuntura relevantes com tecnologia nanotransdérmica. As drogas podem ser entregues através dos meridianos para atingir as células cancerígenas e inibir seu crescimento. Ao mesmo tempo, o método de colagem simétrica foi inventado, e os remendos frios e quentes foram colados em ambos os lados dos meridianos simétricos, de modo que a imunidade das pessoas possa absorver esses dois tipos de propriedades medicinais e automaticamente fazer uso efetivo deles, o que é melhor do que a tradicional mistura oral e fervura. Sopa de ervas, mais eficaz</p>
+            <p class="para1">O fundador também inventou o www.fatebook.org, por meio do qual as informações de aniversário das pessoas podem ser usadas para analisar estatisticamente os defeitos genéticos das pessoas e encontrar maneiras de melhorá-los. Por exemplo, este site pode encontrar imediatamente a causa da doença de Parkinson de Bill Gates, usar nossos adesivos especiais e, após uma semana de adesão, você pode ver uma melhora significativa no relatório do exame de sangue</p>
+            <p>Nossos adesivos podem ser colados nos pontos de acupuntura das solas dos pés e a febre será reduzida imediatamente em meia hora. É seguro, eficaz, rápido e não invasivo, e tem muita comprovação clínica</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'comment' data.id %}" class="btn btn-primary">User Forum</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

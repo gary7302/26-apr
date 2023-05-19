@@ -184,3 +184,23 @@ def russianloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/russianlogin')
         return render(request, 'russian-store/auth/login.html')
+
+def portugueseloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/russian')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/portuguese')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/portugueselogin')
+        return render(request, 'portuguese-store/auth/login.html')
