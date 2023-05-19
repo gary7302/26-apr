@@ -188,7 +188,7 @@ def russianloginpage(request):
 def portugueseloginpage(request):
     if request.user.is_authenticated:
         messages.warning(request,'You are already logged in')
-        return redirect('/russian')
+        return redirect('/portuguese')
     else:
 
         if request.method == 'POST':
