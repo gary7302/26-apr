@@ -5,11 +5,13 @@ from store.forms import *
 from datetime import datetime
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
 def frenchhome(request):
     category=FrenchCategory.objects.all()
     return render(request,'french-store/index.html',{'category':category})
 
+@login_required(login_url='frenchlogin')
 def frenchcomment(request,id):
     eachProduct = FrenchCategory.objects.get(id=id)
 

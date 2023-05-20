@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="chinese">主頁</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'chinese' %}">主頁</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,15 +19,15 @@
             <li><a class="dropdown-item" href="#">行動</a></li>
             <li><a class="dropdown-item" href="#">另一個動作</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="logout">登出</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}">登出</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="chineselogin">登錄</a>
+          <a class="nav-link active" href="{% url 'chineselogin' %}">登錄</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="chinese-register">報名</a>
+          <a class="nav-link active" href="{% url 'chinese-register' %}">報名</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -37,14 +37,14 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
             <li><a class="dropdown-item" href="/">English</a></li>
-            <li><a class="dropdown-item" href="chinese">Chinese</a></li>
-            <li><a class="dropdown-item" href="hindi">Hindi</a></li>
-            <li><a class="dropdown-item" href="spanish">Spanish</a></li>
-            <li><a class="dropdown-item" href="french">French</a></li>
-            <li><a class="dropdown-item" href="/">Arabic</a></li>
-            <li><a class="dropdown-item" href="/">Bengali</a></li>
-            <li><a class="dropdown-item" href="/">Russian</a></li>
-            <li><a class="dropdown-item" href="/">Portuguese</a></li>
+            <li><a class="dropdown-item" href="{% url 'chinese' %}">Chinese</a></li>
+            <li><a class="dropdown-item" href="{% url 'hindi' %}">Hindi</a></li>
+            <li><a class="dropdown-item" href="{% url 'spanish' %}">Spanish</a></li>
+            <li><a class="dropdown-item" href="{% url 'french' %}">French</a></li>
+            <li><a class="dropdown-item" href="{% url 'arabic' %}">Arabic</a></li>
+            <li><a class="dropdown-item" href="{% url 'bengali' %}">Bengali</a></li>
+            <li><a class="dropdown-item" href="{% url 'russian' %}">Russian</a></li>
+            <li><a class="dropdown-item" href="{% url 'portuguese' %}">Portuguese</a></li>
             <li><a class="dropdown-item" href="/">Urdu</a></li>
             <li><a class="dropdown-item" href="/">Indonesian</a></li>
             <li><a class="dropdown-item" href="/">German</a></li>
@@ -111,21 +111,21 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="chinese-getpatch">獲取貼紙</a>
+          <a class="nav-link active" href="{% url 'chinese-getpatch' %}">獲取貼紙</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="chinese-usepatch">應用貼紙</a>
+          <a class="nav-link active" href="{% url 'chinese-usepatch' %}">應用貼紙</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="chinese-details">理論</a>
+          <a class="nav-link active" href="{% url 'chinese-details' %}">理論</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="chinesecart">購物車</a>
+          <a class="nav-link active" href="{% url 'chinesecart' %}">購物車</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="shopping">紫薇團購</a>
+          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>
         </li>
       </ul>
     </div>

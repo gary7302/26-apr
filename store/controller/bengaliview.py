@@ -5,11 +5,13 @@ from store.forms import *
 from datetime import datetime
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
 def bengalihome(request):
     category=BengaliCategory.objects.all()
     return render(request,'bengali-store/index.html',{'category':category})
 
+@login_required(login_url='bengalilogin')
 def bengalicomment(request,id):
     eachProduct = BengaliCategory.objects.get(id=id)
 

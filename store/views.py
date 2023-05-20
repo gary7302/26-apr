@@ -16,6 +16,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.middleware import locale
 from django.middleware.locale import LocaleMiddleware
 from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
     category=Category.objects.all()
@@ -31,6 +32,7 @@ def home(request):
 #         messages.warning(request,'No such category found')
 #         return redirect('home')
 
+@login_required(login_url='loginpage')
 def comment(request,id):
     eachProduct = Category.objects.get(id=id)
 

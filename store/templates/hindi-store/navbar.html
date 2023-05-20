@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="/">घर</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'hindi' %}">घर</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,15 +19,15 @@
             <li><a class="dropdown-item" href="#">कार्य</a></li>
             <li><a class="dropdown-item" href="#">एक और क्रिया</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="logout">लॉग आउट</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}">लॉग आउट</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="hindilogin">लॉग इन करें</a>
+          <a class="nav-link active" href="{% url 'hindilogin' %}">लॉग इन करें</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="hindi-register">साइन अप करें</a>
+          <a class="nav-link active" href="{% url 'hindi-register' %}">साइन अप करें</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -37,14 +37,14 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
             <li><a class="dropdown-item" href="/">English</a></li>
-            <li><a class="dropdown-item" href="chinese">Chinese</a></li>
-            <li><a class="dropdown-item" href="hindi">Hindi</a></li>
-            <li><a class="dropdown-item" href="spanish">Spanish</a></li>
-            <li><a class="dropdown-item" href="french">French</a></li>
-            <li><a class="dropdown-item" href="/">Arabic</a></li>
-            <li><a class="dropdown-item" href="/">Bengali</a></li>
-            <li><a class="dropdown-item" href="/">Russian</a></li>
-            <li><a class="dropdown-item" href="/">Portuguese</a></li>
+            <li><a class="dropdown-item" href="{% url 'chinese' %}">Chinese</a></li>
+            <li><a class="dropdown-item" href="{% url 'hindi' %}">Hindi</a></li>
+            <li><a class="dropdown-item" href="{% url 'spanish' %}">Spanish</a></li>
+            <li><a class="dropdown-item" href="{% url 'french' %}">French</a></li>
+            <li><a class="dropdown-item" href="{% url 'arabic' %}">Arabic</a></li>
+            <li><a class="dropdown-item" href="{% url 'bengali' %}">Bengali</a></li>
+            <li><a class="dropdown-item" href="{% url 'russian' %}">Russian</a></li>
+            <li><a class="dropdown-item" href="{% url 'portuguese' %}">Portuguese</a></li>
             <li><a class="dropdown-item" href="/">Urdu</a></li>
             <li><a class="dropdown-item" href="/">Indonesian</a></li>
             <li><a class="dropdown-item" href="/">German</a></li>
@@ -111,21 +111,21 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="hindi-getpatch">गेटपैच</a>
+          <a class="nav-link active" href="{% url 'hindi-getpatch' %}">गेटपैच</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="hindi-usepatch">अप्लाई पैच</a>
+          <a class="nav-link active" href="{% url 'hindi-usepatch' %}">अप्लाई पैच</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="hindi-details">लिखित</a>
+          <a class="nav-link active" href="{% url 'hindi-details' %}">लिखित</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="hindicart">कार्ट</a>
+          <a class="nav-link active" href="{% url 'hindicart' %}">कार्ट</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="shopping">紫薇團購</a>
+          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>
         </li>
       </ul>
     </div>

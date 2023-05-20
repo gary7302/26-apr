@@ -5,11 +5,12 @@ from store.forms import *
 from datetime import datetime
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
 def arabichome(request):
     category=ArabicCategory.objects.all()
     return render(request,'arabic-store/index.html',{'category':category})
-
+@login_required(login_url='arabiclogin')
 def arabiccomment(request,id):
     eachProduct = ArabicCategory.objects.get(id=id)
 

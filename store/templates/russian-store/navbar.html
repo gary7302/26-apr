@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="russianhome">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'russianhome' %}">Home</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,15 +19,15 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="logout">Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}">Logout</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="russianlogin">Login</a>
+          <a class="nav-link active" href="{% url 'russianlogin' %}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="russianregister">SignUp</a>
+          <a class="nav-link active" href="{% url 'russianregister' %}">SignUp</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -37,14 +37,14 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
             <li><a class="dropdown-item" href="/">English</a></li>
-            <li><a class="dropdown-item" href="chinese">Chinese</a></li>
-            <li><a class="dropdown-item" href="hindi">Hindi</a></li>
-            <li><a class="dropdown-item" href="spanish">Spanish</a></li>
-            <li><a class="dropdown-item" href="french">French</a></li>
-            <li><a class="dropdown-item" href="arabic">Arabic</a></li>
-            <li><a class="dropdown-item" href="bengali">Bengali</a></li>
-            <li><a class="dropdown-item" href="russian">Russian</a></li>
-            <li><a class="dropdown-item" href="/">Portuguese</a></li>
+            <li><a class="dropdown-item" href="{% url 'chinese' %}">Chinese</a></li>
+            <li><a class="dropdown-item" href="{% url 'hindi' %}">Hindi</a></li>
+            <li><a class="dropdown-item" href="{% url 'spanish' %}">Spanish</a></li>
+            <li><a class="dropdown-item" href="{% url 'french' %}">French</a></li>
+            <li><a class="dropdown-item" href="{% url 'arabic' %}">Arabic</a></li>
+            <li><a class="dropdown-item" href="{% url 'bengali' %}">Bengali</a></li>
+            <li><a class="dropdown-item" href="{% url 'russian' %}">Russian</a></li>
+            <li><a class="dropdown-item" href="{% url 'portuguese' %}">Portuguese</a></li>
             <li><a class="dropdown-item" href="/">Urdu</a></li>
             <li><a class="dropdown-item" href="/">Indonesian</a></li>
             <li><a class="dropdown-item" href="/">German</a></li>
@@ -111,21 +111,21 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="russiangetpatch">GetPatch</a>
+          <a class="nav-link active" href="{% url 'russiangetpatch' %}">GetPatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="russianusepatch">UsePatch</a>
+          <a class="nav-link active" href="{% url 'russianusepatch' %}">UsePatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="russiandetails">Theory</a>
+          <a class="nav-link active" href="{% url 'russiandetails' %}">Theory</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="russiancart">Cart</a>
+          <a class="nav-link active" href="{% url 'russiancart' %}">Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="shopping">紫薇團購</a>
+          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>
         </li>
       </ul>
     </div>

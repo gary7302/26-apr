@@ -5,11 +5,13 @@ from store.forms import *
 from datetime import datetime
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
 def hindihome(request):
     category=HindiCategory.objects.all()
     return render(request,'hindi-store/index.html',{'category':category})
 
+@login_required(login_url='hindilogin')
 def hindidetails(request):
     return render(request,'hindi-store/details.html')
 
