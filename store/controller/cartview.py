@@ -93,3 +93,7 @@ def russiancart(request):
 @login_required(login_url='portugueselogin')
 def portuguesecart(request):
     return render(request,'portuguese-store/cart.html')
+
+@login_required(login_url='urdulogin')
+def urducart(request):
+    return render(request,'urdu-store/cart.html')

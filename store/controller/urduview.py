@@ -7,32 +7,32 @@ from django.contrib.auth import login,logout,authenticate
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
-def spanishhome(request):
-    category=SpanishCategory.objects.all()
-    return render(request,'spanish-store/index.html',{'category':category})
+def urduhome(request):
+    category=UrduCategory.objects.all()
+    return render(request,'urdu-store/index.html',{'category':category})
 
-@login_required(login_url='spanishlogin')
-def spanishdetails(request):
-    return render(request,'spanish-store/details.html')
+@login_required(login_url='urdulogin')
+def urdudetails(request):
+    return render(request,'urdu-store/details.html')
 
-def spanishcomment(request,id):
-    eachProduct=SpanishCategory.objects.get(id=id)
-    form=SpanishCommentForm()
+def urducomment(request,id):
+    eachProduct=UrduCategory.objects.get(id=id)
+    form=UrduCommentForm()
     context={'form':form,'eachProduct':eachProduct}
-    return render(request,'spanish-store/coment.html',context)
+    return render(request,'urdu-store/coment.html',context)
 
-def spanishaddcomment(request,id):
+def urduaddcomment(request,id):
     if request.method == "POST":
-        form=SpanishCommentForm(request.POST,request.FILES)
+        form=UrduCommentForm(request.POST,request.FILES)
         if form.is_valid():
             commenter_name = request.user
             comment_body = form.cleaned_data['comment_body']
             comment_image = form.cleaned_data['comment_image']
-            eachProduct = SpanishCategory.objects.get(id=id)
-            d = SpanishComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,
+            eachProduct = UrduCategory.objects.get(id=id)
+            d = UrduComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,
                              comment_image=comment_image, created_at=datetime.now())
             d.save()
-            return redirect('spanish')
+            return redirect('urdu')
         return HttpResponse('<h1>We are unable to add your comment</h1>')
 
 def register(request):
@@ -44,14 +44,14 @@ def register(request):
             try:
                 user=User.objects.create_user(username=username,password=form.cleaned_data['password1'])
                 user.save()
-                return redirect('/spanishlogin')
+                return redirect('/urdulogin')
             except IntegrityError:
                 messages.warning(request,'This username altreay in use. Please choose another')
     context={'form':form}
-    return render(request,'spanish-store/auth/register.html',context)
+    return render(request,'urdu-store/auth/register.html',context)
 
-def spanishgetpatch(request):
-    return render(request,'spanish-store/getpatch.html')
+def urdugetpatch(request):
+    return render(request,'urdu-store/getpatch.html')
 
-def spanishusepatch(request):
-    return render(request,'spanish-store/usepatch.html')
+def urduusepatch(request):
+    return render(request,'urdu-store/usepatch.html')
