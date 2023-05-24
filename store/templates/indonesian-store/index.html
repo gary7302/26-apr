@@ -1,0 +1,32 @@
+{% extends 'indonesian-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Tentang kami</h4>
+            <p>Kami adalah Kuil Paman Sam Amerika, berlokasi di Los Angeles, California, dengan cabang di Taiwan. Advokasi pencegahan dan pengobatan kanker non-invasif, berikan pasien stiker kanker gratis, gratis seumur hidup. Bantu pasien kanker. Mengurangi rasa sakit dan memperpanjang hidup tanpa mengeluarkan uang sepeser pun. Melayani 50 juta pasien kanker di seluruh dunia, kami tidak menerima sumbangan apapun.</p>
+            <p class="para">Pendiri asosiasi, Lini Chiang, berusia 71 tahun. Lima anggota keluarganya menderita kanker yang berbeda. Empat di antaranya telah meninggal. Harapan hidup rata-rata anggota keluarga yang meninggal adalah 54 tahun. Bertekad untuk menggunakan penemuannya untuk membantu pasien kanker di seluruh dunia secara gratis.</p>
+            <p>Tambalan perekat mengandung bahan aktif obat herbal, dan ditempelkan pada titik akupunktur yang relevan dengan teknologi nano-transdermal. Obat dapat disalurkan melalui meridian untuk mencapai sel kanker dan menghambat pertumbuhannya. Pada saat yang sama, metode pelekatan simetris ditemukan, dan tambalan dingin dan panas ditempelkan di kedua sisi meridian simetris, sehingga kekebalan manusia dapat menyerap kedua jenis khasiat obat ini, dan secara otomatis memanfaatkannya secara efektif, yang mana lebih baik daripada pencampuran dan perebusan oral tradisional. Sup herbal, lebih efektif</p>
+            <p class="para1">Pendiri juga menemukan www.fatebook.org, di mana informasi ulang tahun orang dapat digunakan untuk menganalisis secara statistik cacat genetik orang dan menemukan cara untuk memperbaikinya. Misalnya, situs web ini dapat segera menemukan penyebab penyakit Parkinson Bill Gates, menggunakan tambalan khusus kami, dan setelah seminggu menempel, Anda dapat melihat peningkatan yang signifikan dalam laporan tes darah</p>
+            <p>Tambalan kami dapat ditempelkan pada titik akupuntur di telapak kaki, dan demam akan segera berkurang dalam waktu setengah jam. Ini aman, efektif, cepat dan non-invasif, dan memiliki banyak bukti klinis</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'indonesiancomment' data.id %}" class="btn btn-primary">Forum Pengguna</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

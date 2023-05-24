@@ -224,3 +224,23 @@ def urduloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/urdulogin')
         return render(request, 'urdu-store/auth/login.html')
+
+def indonesianloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/indonesian')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/indonesian')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/indonesianlogin')
+        return render(request, 'indonesian-store/auth/login.html')

@@ -7,32 +7,33 @@ from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
-def hindihome(request):
-    category=HindiCategory.objects.all()
-    return render(request,'hindi-store/index.html',{'category':category})
+def indonesianhome(request):
+    category=IndonesianCategory.objects.all()
+    return render(request,'indonesian-store/index.html',{'category':category})
 
-@login_required(login_url='hindilogin')
-def hindidetails(request):
-    return render(request,'hindi-store/details.html')
 
-def hindicomment(request,id):
-    eachProduct = HindiCategory.objects.get(id=id)
+def indonesiandetails(request):
+    return render(request,'indonesian-store/details.html')
 
-    form = HindiCommentForm()
+@login_required(login_url='indonesianlogin')
+def indonesiancomment(request,id):
+    eachProduct = IndonesianCategory.objects.get(id=id)
+
+    form = IndonesianCommentForm()
     context = {'form': form, 'eachProduct': eachProduct}
-    return render(request, 'hindi-store/coment.html', context)
+    return render(request, 'indonesian-store/coment.html', context)
 
-def hindiaddcomment(request,id):
+def indonesianaddcomment(request,id):
     if request.method == "POST":
-        form = HindiCommentForm(request.POST, request.FILES)
+        form = IndonesianCommentForm(request.POST, request.FILES)
         if form.is_valid():
             commenter_name = request.user
             comment_body = form.cleaned_data['comment_body']
             comment_image = form.cleaned_data['comment_image']
-            eachProduct = HindiCategory.objects.get(id=id)
-            d = HindiComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,comment_image=comment_image, created_at=datetime.now())
+            eachProduct = IndonesianCategory.objects.get(id=id)
+            d = IndonesianComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,comment_image=comment_image, created_at=datetime.now())
             d.save()
-            return redirect('hindi')
+            return redirect('indonesian')
     return HttpResponse('<h1>We are unable to add your comment</h1>')
 
 def register(request):
@@ -44,14 +45,14 @@ def register(request):
             try:
                 user=User.objects.create_user(username=username,password=form.cleaned_data['password1'])
                 user.save()
-                return redirect('/hindilogin')
+                return redirect('/indonesianlogin')
             except IntegrityError:
                 messages.warning(request,'This username has already taken. Choose different')
     context={'form':form}
-    return render(request,'hindi-store/auth/register.html',context)
+    return render(request,'indonesian-store/auth/register.html',context)
 
-def hindigetpatch(request):
-    return render(request,'hindi-store/getpatch.html')
+def indonesiangetpatch(request):
+    return render(request,'indonesian-store/getpatch.html')
 
-def hindiusepatch(request):
-    return render(request,'hindi-store/usepatch.html')
+def indonesianusepatch(request):
+    return render(request,'indonesian-store/usepatch.html')

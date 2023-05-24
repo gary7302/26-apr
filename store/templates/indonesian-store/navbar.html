@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="/">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'indonesian' %}">Home</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -24,10 +24,10 @@
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'loginpage' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'indonesianlogin' %}" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'register' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'indonesianregister' %}" >SignUp</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -111,18 +111,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'getpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'indonesiangetpatch' %}">GetPatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'usepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'indonesianusepatch' %}" >UsePatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'details' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'indonesiandetails' %}">Theory</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'cart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'indonesiancart' %}">Cart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>

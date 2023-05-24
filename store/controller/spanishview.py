@@ -11,10 +11,11 @@ def spanishhome(request):
     category=SpanishCategory.objects.all()
     return render(request,'spanish-store/index.html',{'category':category})
 
-@login_required(login_url='spanishlogin')
+
 def spanishdetails(request):
     return render(request,'spanish-store/details.html')
 
+@login_required(login_url='spanishlogin')
 def spanishcomment(request,id):
     eachProduct=SpanishCategory.objects.get(id=id)
     form=SpanishCommentForm()

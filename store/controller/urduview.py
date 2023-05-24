@@ -11,10 +11,10 @@ def urduhome(request):
     category=UrduCategory.objects.all()
     return render(request,'urdu-store/index.html',{'category':category})
 
-@login_required(login_url='urdulogin')
+
 def urdudetails(request):
     return render(request,'urdu-store/details.html')
-
+@login_required(login_url='urdulogin')
 def urducomment(request,id):
     eachProduct=UrduCategory.objects.get(id=id)
     form=UrduCommentForm()

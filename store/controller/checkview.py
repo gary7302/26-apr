@@ -191,3 +191,13 @@ def urdumaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'urdu-store/maincheckout.html',context)
+
+@login_required(login_url='indonesianlogin')
+def indonesianmaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'indonesian-store/maincheckout.html',context)
