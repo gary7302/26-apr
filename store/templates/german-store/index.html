@@ -1,0 +1,32 @@
+{% extends 'german-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Über uns</h4>
+            <p>Wir sind der amerikanische Uncle Sam Temple mit Sitz in Los Angeles, Kalifornien, und Niederlassungen in Taiwan. Befürworten Sie nicht-invasive Krebsprävention und -behandlung und stellen Sie Patienten lebenslang kostenlose Krebsaufkleber zur Verfügung. Helfen Sie Krebspatienten. Reduzieren Sie Schmerzen und verlängern Sie das Leben, ohne einen Cent auszugeben. Da wir weltweit 50 Millionen Krebspatienten betreuen, nehmen wir keine Spenden entgegen.</p>
+            <p class="para">Die Gründerin des Vereins, Lini Chiang, ist 71 Jahre alt. Fünf Mitglieder seiner Familie litten an verschiedenen Krebsarten. Vier von ihnen sind gestorben. Die durchschnittliche Lebenserwartung der verstorbenen Familienmitglieder beträgt 54 Jahre. Entschlossen, seine Erfindung zu nutzen, um Krebspatienten auf der ganzen Welt kostenlos zu helfen.</p>
+            <p> Die Klebepflaster enthalten die Wirkstoffe pflanzlicher Arzneimittel und werden mit nanotransdermaler Technologie auf die relevanten Akupunkturpunkte geklebt. Medikamente können über die Meridiane abgegeben werden, um die Krebszellen zu erreichen und deren Wachstum zu hemmen. Gleichzeitig wurde die symmetrische Klebemethode erfunden und die kalten und heißen Pflaster auf beide Seiten der symmetrischen Meridiane geklebt, damit die Immunität der Menschen diese beiden Arten von medizinischen Eigenschaften absorbieren und sie automatisch effektiv nutzen kann ist besser als herkömmliches orales Mischen und Kochen. Kräutersuppe, effektiver</p>
+            <p class="para1">Der Gründer erfand auch www.fatebook.org, mit dem die Geburtstagsinformationen von Menschen genutzt werden können, um genetische Defekte von Menschen statistisch zu analysieren und Wege zu finden, diese zu verbessern. Auf dieser Website können Sie beispielsweise sofort die Ursache der Parkinson-Krankheit von Bill Gates finden, unsere speziellen Pflaster verwenden und nach einer Woche des Aufklebens können Sie eine deutliche Verbesserung im Bluttestbericht feststellen</p>
+            <p>Unsere Pflaster können auf die Akupunkturpunkte an den Fußsohlen geklebt werden und das Fieber wird innerhalb einer halben Stunde sofort gesenkt. Es ist sicher, effektiv, schnell und nicht-invasiv und verfügt über zahlreiche klinische Beweise</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'germancomment' data.id %}" class="btn btn-primary">Benutzerforum</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
