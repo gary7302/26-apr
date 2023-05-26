@@ -24,10 +24,10 @@
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'loginpage' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'urdulogin' %}" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'register' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'urduregister' %}" >SignUp</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -46,8 +46,8 @@
             <li><a class="dropdown-item" href="{% url 'russian' %}">Russian</a></li>
             <li><a class="dropdown-item" href="{% url 'portuguese' %}">Portuguese</a></li>
             <li><a class="dropdown-item" href="{% url 'urdu' %}">Urdu</a></li>
-            <li><a class="dropdown-item" href="/">Indonesian</a></li>
-            <li><a class="dropdown-item" href="/">German</a></li>
+            <li><a class="dropdown-item" href="{% url 'indonesian' %}">Indonesian</a></li>
+            <li><a class="dropdown-item" href="{% url 'german' %}">German</a></li>
             <li><a class="dropdown-item" href="/">Japanese</a></li>
             <li><a class="dropdown-item" href="/">Nigerian</a></li>
             <li><a class="dropdown-item" href="/">Marathi</a></li>
@@ -111,18 +111,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'getpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'urdugetpatch' %}">GetPatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'usepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'urduusepatch' %}" >UsePatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'details' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'urdudetails' %}">Theory</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'cart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'urducart' %}">Cart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>

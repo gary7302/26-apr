@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="/">Hogar</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'spanish' %}">Hogar</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -45,9 +45,9 @@
             <li><a class="dropdown-item" href="{% url 'bengali' %}">Bengali</a></li>
             <li><a class="dropdown-item" href="{% url 'russian' %}">Russian</a></li>
             <li><a class="dropdown-item" href="{% url 'portuguese' %}">Portuguese</a></li>
-            <li><a class="dropdown-item" href="/">Urdu</a></li>
-            <li><a class="dropdown-item" href="/">Indonesian</a></li>
-            <li><a class="dropdown-item" href="/">German</a></li>
+            <li><a class="dropdown-item" href="{% url 'urdu' %}">Urdu</a></li>
+            <li><a class="dropdown-item" href="{% url 'indonesian' %}">Indonesian</a></li>
+            <li><a class="dropdown-item" href="{% url 'german' %}">German</a></li>
             <li><a class="dropdown-item" href="/">Japanese</a></li>
             <li><a class="dropdown-item" href="/">Nigerian</a></li>
             <li><a class="dropdown-item" href="/">Marathi</a></li>
