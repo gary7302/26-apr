@@ -105,3 +105,11 @@ def indonesiancart(request):
 @login_required(login_url='germanlogin')
 def germancart(request):
     return render(request,'german-store/cart.html')
+
+@login_required(login_url='japaneselogin')
+def japanesecart(request):
+    return render(request,'japanese-store/cart.html')
+
+@login_required(login_url='nigerianlogin')
+def nigeriancart(request):
+    return render(request,'nigerian-store/cart.html')

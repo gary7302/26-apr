@@ -264,3 +264,43 @@ def germanloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/germanlogin')
         return render(request, 'german-store/auth/login.html')
+
+def japaneseloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/japanese')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/japanese')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/japaneselogin')
+        return render(request, 'japanese-store/auth/login.html')
+
+def nigerianloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/nigerian')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/nigerian')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/nigerianlogin')
+        return render(request, 'nigerian-store/auth/login.html')

@@ -1,0 +1,32 @@
+{% extends 'nigerian-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Game da Mu</h4>
+            <p>Mu ne Uncle Sam Temple na Amurka, wanda ke Los Angeles, California, tare da rassa a Taiwan. Ba da shawara kan rigakafin cutar kansa da kuma magani, ba marasa lafiya da lambobi masu cutar kansa kyauta, kyauta na rayuwa. Taimaka wa masu fama da ciwon daji. Rage zafi da tsawaita rayuwa ba tare da kashe ko kwabo ba. Yin hidima ga masu fama da cutar kansa miliyan 50 a duk duniya, ba ma karɓar kowace gudummawa.</p>
+            <p class="para">Wanda ya kafa kungiyar, Lini Chiang, yana da shekaru 71 a duniya. Mutum biyar daga cikin iyalansa sun yi fama da ciwon daji daban-daban. Hudu daga cikinsu sun mutu. Matsakaicin tsawon rayuwar dangin da suka mutu yana da shekaru 54. Ya kuduri aniyar yin amfani da abin da ya kirkira don taimakawa masu fama da cutar daji a duk duniya a kyauta.</p>
+            <p>Faci mai mannewa yana ƙunshe da sinadarai masu aiki na magungunan ganya, kuma ana liƙa a kan wuraren acupuncture masu dacewa tare da fasahar nano-transdermal. Ana iya isar da magunguna ta hanyar meridians don isa ga ƙwayoyin kansa da hana haɓakarsu. A lokaci guda kuma, an ƙirƙiro hanyar mannewa, sannan aka manna facin sanyi da zafi a ɓangarorin biyu na meridians, ta yadda garkuwar mutane za ta iya ɗaukar waɗannan nau'ikan nau'ikan magani guda biyu, ta atomatik yin amfani da su yadda ya kamata. ya fi gauraya baki da tafasa. Miyan ganye, mafi inganci</p>
+            <p class="para1">Wanda ya kafa ya kuma kirkiro www.fatebook.org, wanda ta inda za a yi amfani da bayanan ranar haihuwar mutane don tantance lahani na kwayoyin halittar mutane da gano hanyoyin inganta su. Misali, nan da nan wannan gidan yanar gizon zai iya gano musabbabin cutar Parkinson ta Bill Gates, ta yi amfani da facinmu na musamman, kuma bayan mako guda da mannewa, za ku ga gagarumin ci gaba a rahoton gwajin jini.</p>
+            <p> Ana iya manna facin mu a kan acupoints a tafin ƙafafu, kuma za a rage zazzabi nan da nan cikin rabin sa'a. Yana da lafiya, tasiri, sauri kuma mara amfani, kuma yana da hujjoji na asibiti da yawa</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'nigeriancomment' data.id %}" class="btn btn-primary">Dandalin Masu Amfani</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
