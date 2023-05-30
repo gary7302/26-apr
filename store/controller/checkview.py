@@ -231,3 +231,13 @@ def nigerianmaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'nigerian-store/maincheckout.html',context)
+
+@login_required(login_url='marathilogin')
+def marathimaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'marathi-store/maincheckout.html',context)

@@ -304,3 +304,23 @@ def nigerianloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/nigerianlogin')
         return render(request, 'nigerian-store/auth/login.html')
+
+def marathiloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/marathi')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/marathi')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/marathilogin')
+        return render(request, 'marathi-store/auth/login.html')

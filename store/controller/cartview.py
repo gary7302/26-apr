@@ -113,3 +113,7 @@ def japanesecart(request):
 @login_required(login_url='nigerianlogin')
 def nigeriancart(request):
     return render(request,'nigerian-store/cart.html')
+
+@login_required(login_url='marathilogin')
+def marathicart(request):
+    return render(request,'marathi-store/cart.html')
