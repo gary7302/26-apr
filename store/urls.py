@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview
+from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview
 from django.views.i18n import set_language
 
 urlpatterns = [
@@ -21,6 +21,7 @@ urlpatterns = [
     path('japaneseregister', japaneseview.register, name='japaneseregister'),
     path('nigerianregister', nigerianview.register, name='nigerianregister'),
     path('marathiregister', marathiview.register, name='marathiregister'),
+    path('teluguregister', teluguview.register, name='teluguregister'),
     path('login',authview.loginpage,name='loginpage'),
     path('hindilogin',authview.hindiloginpage,name='hindilogin'),
     path('chineselogin',authview.chineseloginpage,name='chineselogin'),
@@ -36,6 +37,7 @@ urlpatterns = [
     path('japaneselogin', authview.japaneseloginpage, name='japaneselogin'),
     path('nigerianlogin', authview.nigerianloginpage, name='nigerianlogin'),
     path('marathilogin', authview.marathiloginpage, name='marathilogin'),
+    path('telugulogin', authview.teluguloginpage, name='telugulogin'),
     path('logout',authview.logoutpage,name='logoutpage'),
     path('add-to-cart',cartview.addtocart,name='addtocart'),
     path('cart',cartview.showCart,name='cart'),
@@ -52,7 +54,8 @@ urlpatterns = [
     path('germancart', cartview.germancart, name='germancart'),
     path('japanesecart', cartview.japanesecart, name='japanesecart'),
     path('nigeriancart', cartview.nigeriancart, name='nigeriancart'),
-    path('nmarathicart', cartview.marathicart, name='marathicart'),
+    path('marathicart', cartview.marathicart, name='marathicart'),
+    path('telugucart', cartview.telugucart, name='telugucart'),
     path('update-cart',cartview.updatecart,name="updatecart"),
     path('delete-cart-item',cartview.deletecartitem,name="deletecartitem"),
     path('checkout',checkview.checkout,name='checkout'),
@@ -71,6 +74,7 @@ urlpatterns = [
     path('japanesemaincheckout', checkview.japanesemaincheckout, name='japanesemaincheckout'),
     path('nigerianmaincheckout', checkview.nigerianmaincheckout, name='nigerianmaincheckout'),
     path('marathimaincheckout', checkview.marathimaincheckout, name='marathimaincheckout'),
+    path('telugumaincheckout', checkview.telugumaincheckout, name='telugumaincheckout'),
     path('place-order',checkview.placeorder,name="placeorder"),
     path('charge', paymentview.charge, name='charge'),
     path('success/', paymentview.success, name='success'),
@@ -93,6 +97,7 @@ urlpatterns = [
     path('japanese', japaneseview.japanesehome, name='japanese'),
     path('nigerian', nigerianview.nigerianhome, name='nigerian'),
     path('marathi', marathiview.marathihome, name='marathi'),
+    path('telugu', teluguview.teluguhome, name='telugu'),
     path('details',details,name='details'),
     path('chinese-details',chineseview.chinesedetails,name='chinese-details'),
     path('hindi-details',hindiview.hindidetails,name='hindi-details'),
@@ -108,6 +113,7 @@ urlpatterns = [
     path('japanesedetails', japaneseview.japanesedetails, name='japanesedetails'),
     path('nigeriandetails', nigerianview.nigeriandetails, name='nigeriandetails'),
     path('marathidetails', marathiview.marathidetails, name='marathidetails'),
+    path('telugudetails', teluguview.telugudetails, name='telugudetails'),
     path('getpatch',getpatch,name='getpatch'),
     path('chinese-getpatch',chineseview.chinesegetpatch,name='chinese-getpatch'),
     path('hindi-getpatch',hindiview.hindigetpatch,name='hindi-getpatch'),
@@ -123,6 +129,7 @@ urlpatterns = [
     path('japanesegetpatch', japaneseview.japanesegetpatch, name='japanesegetpatch'),
     path('nigeriangetpatch', nigerianview.nigeriangetpatch, name='nigeriangetpatch'),
     path('marathigetpatch', marathiview.marathigetpatch, name='marathigetpatch'),
+    path('telugugetpatch', teluguview.telugugetpatch, name='telugugetpatch'),
     path('usepatch',usepatch,name='usepatch'),
     path('chinese-usepatch',chineseview.chineseusepatch,name='chinese-usepatch'),
     path('hindi-usepatch',hindiview.hindiusepatch,name='hindi-usepatch'),
@@ -138,6 +145,7 @@ urlpatterns = [
     path('japaneseusepatch', japaneseview.japaneseusepatch, name='japaneseusepatch'),
     path('nigerianusepatch', nigerianview.nigerianusepatch, name='nigerianusepatch'),
     path('marathiusepatch', marathiview.marathiusepatch, name='marathiusepatch'),
+    path('teluguusepatch', teluguview.teluguusepatch, name='teluguusepatch'),
     path('hindicomment/<int:id>',hindiview.hindicomment,name='hindicomment'),
     path('hindiaddComment/<int:id>',hindiview.hindiaddcomment,name='hindiaddComment'),
     path('spanishcomment/<int:id>',spanishview.spanishcomment,name='spanishcomment'),
@@ -164,5 +172,7 @@ urlpatterns = [
     path('nigerianaddcomment/<int:id>', nigerianview.nigerianaddcomment, name='nigerianaddcomment'),
     path('marathicomment/<int:id>', marathiview.marathicomment, name='marathicomment'),
     path('marathiaddcomment/<int:id>', marathiview.marathiaddcomment, name='marathiaddcomment'),
+    path('telugucomment/<int:id>', teluguview.telugucomment, name='telugucomment'),
+    path('teluguaddcomment/<int:id>', teluguview.teluguaddcomment, name='teluguaddcomment'),
     path('shopping',shopping,name='shopping'),
 ]

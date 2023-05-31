@@ -11,7 +11,6 @@ def frenchhome(request):
     category=FrenchCategory.objects.all()
     return render(request,'french-store/index.html',{'category':category})
 
-@login_required(login_url='frenchlogin')
 def frenchcomment(request,id):
     eachProduct = FrenchCategory.objects.get(id=id)
 
@@ -19,6 +18,7 @@ def frenchcomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'french-store/coment.html', context)
 
+@login_required(login_url='frenchlogin')
 def frenchaddcomment(request,id):
     if request.method == "POST":
         form = FrenchCommentForm(request.POST, request.FILES)

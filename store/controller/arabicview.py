@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 def arabichome(request):
     category=ArabicCategory.objects.all()
     return render(request,'arabic-store/index.html',{'category':category})
-@login_required(login_url='arabiclogin')
+
 def arabiccomment(request,id):
     eachProduct = ArabicCategory.objects.get(id=id)
 
@@ -18,6 +18,7 @@ def arabiccomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'arabic-store/coment.html', context)
 
+@login_required(login_url='arabiclogin')
 def arabicaddcomment(request,id):
     if request.method == "POST":
         form = ArabicCommentForm(request.POST, request.FILES)

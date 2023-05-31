@@ -15,13 +15,14 @@ def spanishhome(request):
 def spanishdetails(request):
     return render(request,'spanish-store/details.html')
 
-@login_required(login_url='spanishlogin')
+
 def spanishcomment(request,id):
     eachProduct=SpanishCategory.objects.get(id=id)
     form=SpanishCommentForm()
     context={'form':form,'eachProduct':eachProduct}
     return render(request,'spanish-store/coment.html',context)
 
+@login_required(login_url='spanishlogin')
 def spanishaddcomment(request,id):
     if request.method == "POST":
         form=SpanishCommentForm(request.POST,request.FILES)

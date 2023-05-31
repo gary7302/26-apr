@@ -12,7 +12,6 @@ def chinesehome(request):
     category=ChineseCategory.objects.all()
     return render(request,'chinese-store/index.html',{'category':category})
 
-@login_required(login_url='chineselogin')
 def chinesegetpatch(request):
     return render(request,'chinese-store/getpatch.html')
 
@@ -30,6 +29,7 @@ def comment(request,id):
     context={'form':form,'eachProduct':eachProduct}
     return render(request,'chinese-store/coment.html',context)
 
+@login_required(login_url='chineselogin')
 def addComment(request,id):
     if request.method == "POST":
         form = ChinaCommentForm(request.POST, request.FILES)

@@ -14,7 +14,7 @@ def hindihome(request):
 
 def hindidetails(request):
     return render(request,'hindi-store/details.html')
-@login_required(login_url='hindilogin')
+
 def hindicomment(request,id):
     eachProduct = HindiCategory.objects.get(id=id)
 
@@ -22,6 +22,7 @@ def hindicomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'hindi-store/coment.html', context)
 
+@login_required(login_url='hindilogin')
 def hindiaddcomment(request,id):
     if request.method == "POST":
         form = HindiCommentForm(request.POST, request.FILES)

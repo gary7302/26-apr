@@ -11,7 +11,7 @@ def russianhome(request):
     category=RussianCategory.objects.all()
     return render(request,'russian-store/index.html',{'category':category})
 
-@login_required(login_url='russianlogin')
+
 def russiancomment(request,id):
     eachProduct = RussianCategory.objects.get(id=id)
 
@@ -19,6 +19,7 @@ def russiancomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'russian-store/coment.html', context)
 
+@login_required(login_url='russianlogin')
 def russianaddcomment(request,id):
     if request.method == "POST":
         form = RussianCommentForm(request.POST, request.FILES)

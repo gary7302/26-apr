@@ -11,7 +11,7 @@ def portuguesehome(request):
     category=PortugueseCategory.objects.all()
     return render(request,'portuguese-store/index.html',{'category':category})
 
-@login_required(login_url='portugueselogin')
+
 def portuguesecomment(request,id):
     eachProduct = PortugueseCategory.objects.get(id=id)
 
@@ -19,6 +19,7 @@ def portuguesecomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'portuguese-store/coment.html', context)
 
+@login_required(login_url='portugueselogin')
 def portugueseaddcomment(request,id):
     if request.method == "POST":
         form = PortugueseCommentForm(request.POST, request.FILES)

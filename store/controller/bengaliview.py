@@ -11,7 +11,6 @@ def bengalihome(request):
     category=BengaliCategory.objects.all()
     return render(request,'bengali-store/index.html',{'category':category})
 
-@login_required(login_url='bengalilogin')
 def bengalicomment(request,id):
     eachProduct = BengaliCategory.objects.get(id=id)
 
@@ -19,6 +18,7 @@ def bengalicomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'bengali-store/coment.html', context)
 
+@login_required(login_url='bengalilogin')
 def bengaliaddcomment(request,id):
     if request.method == "POST":
         form = BengaliCommentForm(request.POST, request.FILES)

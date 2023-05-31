@@ -14,13 +14,14 @@ def marathihome(request):
 
 def marathidetails(request):
     return render(request,'marathi-store/details.html')
-@login_required(login_url='marathilogin')
+
 def marathicomment(request,id):
     eachProduct=MarathiCategory.objects.get(id=id)
     form=MarathiCommentForm()
     context={'form':form,'eachProduct':eachProduct}
     return render(request,'marathi-store/coment.html',context)
 
+@login_required(login_url='marathilogin')
 def marathiaddcomment(request,id):
     if request.method == "POST":
         form=MarathiCommentForm(request.POST,request.FILES)

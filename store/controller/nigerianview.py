@@ -14,13 +14,14 @@ def nigerianhome(request):
 
 def nigeriandetails(request):
     return render(request,'nigerian-store/details.html')
-@login_required(login_url='nigerianlogin')
+
 def nigeriancomment(request,id):
     eachProduct=NigerianCategory.objects.get(id=id)
     form=NigerianCommentForm()
     context={'form':form,'eachProduct':eachProduct}
     return render(request,'nigerian-store/coment.html',context)
 
+@login_required(login_url='nigerianlogin')
 def nigerianaddcomment(request,id):
     if request.method == "POST":
         form=NigerianCommentForm(request.POST,request.FILES)

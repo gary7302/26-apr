@@ -117,3 +117,7 @@ def nigeriancart(request):
 @login_required(login_url='marathilogin')
 def marathicart(request):
     return render(request,'marathi-store/cart.html')
+
+@login_required(login_url='telugulogin')
+def telugucart(request):
+    return render(request,'telugu-store/cart.html')

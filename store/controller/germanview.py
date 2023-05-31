@@ -14,7 +14,7 @@ def germanhome(request):
 
 def germandetails(request):
     return render(request,'german-store/details.html')
-@login_required(login_url='germanlogin')
+
 def germancomment(request,id):
     eachProduct = GermanCategory.objects.get(id=id)
 
@@ -22,6 +22,7 @@ def germancomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'german-store/coment.html', context)
 
+@login_required(login_url='germanlogin')
 def germanaddcomment(request,id):
     if request.method == "POST":
         form = GermanCommentForm(request.POST, request.FILES)

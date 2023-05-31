@@ -14,13 +14,14 @@ def japanesehome(request):
 
 def japanesedetails(request):
     return render(request,'japanese-store/details.html')
-@login_required(login_url='japaneselogin')
+
 def japanesecomment(request,id):
     eachProduct=JapaneseCategory.objects.get(id=id)
     form=JapaneseCommentForm()
     context={'form':form,'eachProduct':eachProduct}
     return render(request,'japanese-store/coment.html',context)
 
+@login_required(login_url='japaneselogin')
 def japaneseaddcomment(request,id):
     if request.method == "POST":
         form=JapaneseCommentForm(request.POST,request.FILES)

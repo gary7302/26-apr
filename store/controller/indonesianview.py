@@ -15,7 +15,7 @@ def indonesianhome(request):
 def indonesiandetails(request):
     return render(request,'indonesian-store/details.html')
 
-@login_required(login_url='indonesianlogin')
+
 def indonesiancomment(request,id):
     eachProduct = IndonesianCategory.objects.get(id=id)
 
@@ -23,6 +23,7 @@ def indonesiancomment(request,id):
     context = {'form': form, 'eachProduct': eachProduct}
     return render(request, 'indonesian-store/coment.html', context)
 
+@login_required(login_url='indonesianlogin')
 def indonesianaddcomment(request,id):
     if request.method == "POST":
         form = IndonesianCommentForm(request.POST, request.FILES)
