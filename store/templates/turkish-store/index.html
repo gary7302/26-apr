@@ -1,0 +1,32 @@
+{% extends 'turkish-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Hakkımızda</h4>
+            <p>Biz California, Los Angeles'ta bulunan ve Tayvan'da şubeleri bulunan American Uncle Sam Temple'ız. Non-invaziv kanser önleme ve tedavisini savunun, hastalara ücretsiz, ömür boyu ücretsiz kanser çıkartmaları sağlayın. Kanser hastalarına yardım edin. Bir kuruş harcamadan ağrıyı azaltın ve ömrü uzatın. Dünya çapında 50 milyon kanser hastasına hizmet veriyoruz, bağış kabul etmiyoruz.</p>
+            <p class="para">Derneğin kurucusu Lini Chiang 71 yaşında. Ailesinin beş üyesi farklı kanserlerden muzdaripti. Bunlardan dördü öldü. Ölen aile üyelerinin ortalama yaşam süresi 54 yıldır. Buluşunu dünyanın her yerindeki kanser hastalarına ücretsiz olarak yardım etmek için kullanmaya kararlı.</p>
+            <p>Bitkisel ilaçların etken maddelerini içeren yapışkan bantlar, ilgili akupunktur noktalarına nano-transdermal teknoloji ile yapıştırılır. İlaçlar, kanser hücrelerine ulaşmak ve büyümelerini engellemek için meridyenler yoluyla iletilebilir. Aynı zamanda, simetrik yapıştırma yöntemi icat edildi ve soğuk ve sıcak yamalar simetrik meridyenlerin her iki tarafına yapıştırıldı, böylece insanların bağışıklığı bu iki tür tıbbi özelliği emebilir ve otomatik olarak etkili bir şekilde kullanabilir. geleneksel oral karıştırma ve kaynatmadan daha iyidir. Bitkisel çorba, daha etkili</p>
+            <p class="para1">Kurucu ayrıca, insanların doğum günü bilgilerinin insanların genetik kusurlarını istatistiksel olarak analiz etmek ve onları iyileştirmenin yollarını bulmak için kullanılabileceği www.fatebook.org'u icat etti. Örneğin, bu web sitesi Bill Gates'in Parkinson hastalığının nedenini hemen bulabilir, özel yamalarımızı kullanabilir ve bir haftalık yapıştırmadan sonra kan testi raporunda önemli bir gelişme görebilirsiniz.</p>
+            <p>Yamalarımız ayak tabanlarındaki akupunktur noktalarına yapıştırılabilir ve yarım saat içinde ateş hemen düşer. Güvenli, etkili, hızlı ve non-invazivdir ve birçok klinik kanıtı vardır.</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'turkishcomment' data.id %}" class="btn btn-primary">Kullanıcı Forumu</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

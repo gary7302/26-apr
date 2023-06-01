@@ -251,3 +251,13 @@ def telugumaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'telugu-store/maincheckout.html',context)
+
+@login_required(login_url='turkishlogin')
+def turkishmaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'turkish-store/maincheckout.html',context)

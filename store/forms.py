@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from .models import User,ChinaComment,HindiComment,Comment,SpanishComment,FrenchComment,ArabicComment,BengaliComment,RussianComment,PortugueseComment,UrduComment,IndonesianComment,GermanComment,JapaneseComment,NigerianComment,MarathiComment,TeluguComment
+from .models import User,ChinaComment,HindiComment,Comment,SpanishComment,FrenchComment,ArabicComment,BengaliComment,RussianComment,PortugueseComment,UrduComment,IndonesianComment,GermanComment,JapaneseComment,NigerianComment,MarathiComment,TeluguComment,TurkishComment
 from django import forms
 
 class CustomUserForm(UserCreationForm):
@@ -154,4 +154,13 @@ class TeluguCommentForm(forms.Form):
     comment_image=forms.ImageField(required=False)
     class Meta:
         model=TeluguComment
+        fields=['comment_body','comment_image']
+
+class TurkishCommentForm(forms.Form):
+
+    comment_body = forms.CharField(widget=forms.Textarea)
+    #product_id = forms.IntegerField(widget=forms.HiddenInput)
+    comment_image=forms.ImageField(required=False)
+    class Meta:
+        model=TurkishComment
         fields=['comment_body','comment_image']

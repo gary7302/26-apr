@@ -1,0 +1,42 @@
+{% extends 'turkish-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="" class="form-label">Kullanıcı Adı Girin E-posta olmalıdır</label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                    <label class="text-danger">{{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">E-postanızı giriniz</label>
+                    {{form.email}}
+                    {% if form.errors.email %}
+                    <label class="text-danger">{{ form.errors.email}}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Şifrenizi girin</label>
+                    {{form.password1}}
+                    {% if form.errors.password1 %}
+                    <label class="text-danger">{{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Parolanızı doğrulayın</label>
+                    {{form.password2}}
+                    {% if form.errors.password2 %}
+                    <label class="text-danger">{{ form.errors.password2}}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">Göndermek</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

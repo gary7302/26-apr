@@ -344,3 +344,23 @@ def teluguloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/telugulogin')
         return render(request, 'telugu-store/auth/login.html')
+
+def turkishloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/turkish')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/turkish')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/turkishlogin')
+        return render(request, 'turkish-store/auth/login.html')
