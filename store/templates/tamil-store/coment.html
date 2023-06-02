@@ -1,0 +1,39 @@
+{% extends 'tamil-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form method="post" action="{% url 'tamiladdcomment' eachProduct.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit" >கருத்தைச் சேர்க்கவும்</button>
+        <input type="hidden" name="product_id" value="{{eachProduct.id}}">
+      {{ form.as_p }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h4>அனைத்து கருத்துகளையும் பார்க்கவும்</h4>
+      <hr>
+      {% if not eachProduct.tamilcomment.all %}
+        <p>இன்னும் கருத்துகள் இல்லை...முதல் கருத்தை எழுதுங்கள்</p>
+      {% else %}
+        {% for comment in eachProduct.tamilcomment.all %}
+      <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
+          <h5>{{ comment.commenter_name }}</h5>
+          <h6>{{ comment.comment_body }}</h6>
+      <p>{{ comment.created_at }}</p>
+      <hr>
+
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+<script>
+<!--  var commentButton=document.getElementById('addComment');-->
+</script>
+
+{% endblock scripts %}

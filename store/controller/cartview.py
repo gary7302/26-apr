@@ -125,3 +125,7 @@ def telugucart(request):
 @login_required(login_url='turkishlogin')
 def turkishcart(request):
     return render(request,'turkish-store/cart.html')
+
+@login_required(login_url='tamillogin')
+def tamilcart(request):
+    return render(request,'tamil-store/cart.html')
