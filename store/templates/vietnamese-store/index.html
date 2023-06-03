@@ -1,0 +1,32 @@
+{% extends 'vietnamese-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Về chúng tôi</h4>
+            <p>Chúng tôi là Chùa Chú Sam Hoa Kỳ, tọa lạc tại Los Angeles, California, với các chi nhánh tại Đài Loan. Vận động phòng ngừa và điều trị ung thư không xâm lấn, cung cấp cho bệnh nhân miếng dán ung thư miễn phí, miễn phí suốt đời. Giúp bệnh nhân ung thư. Giảm đau và kéo dài tuổi thọ mà không tốn một xu. Phục vụ 50 triệu bệnh nhân ung thư trên toàn thế giới, chúng tôi không nhận bất kỳ khoản đóng góp nào.</p>
+            <p class="para">Người sáng lập hiệp hội, Lini Chiang, năm nay 71 tuổi. Năm thành viên trong gia đình anh mắc các bệnh ung thư khác nhau. Bốn người trong số họ đã chết. Tuổi thọ trung bình của các thành viên trong gia đình người quá cố là 54 tuổi. Quyết tâm dùng phát minh của mình để giúp đỡ miễn phí cho các bệnh nhân ung thư trên toàn thế giới.</p>
+            <p>Miếng dán chứa các thành phần hoạt chất của thuốc thảo dược và được dán lên các huyệt đạo liên quan bằng công nghệ nano xuyên da. Thuốc có thể được vận chuyển qua các kinh mạch để tiếp cận các tế bào ung thư và ức chế sự phát triển của chúng. Đồng thời, phương pháp dán đối xứng được phát minh, miếng dán nóng và lạnh được dán ở hai bên kinh mạch đối xứng, để khả năng miễn dịch của con người có thể hấp thụ hai loại dược tính này và tự động sử dụng hiệu quả. tốt hơn so với trộn và đun sôi bằng miệng truyền thống. Súp thảo dược, hiệu quả hơn</p>
+            <p class="para1">Người sáng lập cũng đã phát minh ra www.fatebook.org, qua đó thông tin về ngày sinh nhật của mọi người có thể được sử dụng để phân tích thống kê các khiếm khuyết di truyền của mọi người và tìm cách cải thiện chúng. Ví dụ: trang web này có thể ngay lập tức tìm ra nguyên nhân gây ra bệnh Parkinson của Bill Gates, hãy sử dụng các miếng dán đặc biệt của chúng tôi và sau một tuần dán, bạn có thể thấy sự cải thiện đáng kể trong báo cáo xét nghiệm máu</p>
+            <p>Miếng dán của chúng tôi có thể dán lên các huyệt ở lòng bàn chân, nửa tiếng sau sẽ hạ sốt ngay. Nó an toàn, hiệu quả, nhanh chóng và không xâm lấn, và có rất nhiều bằng chứng lâm sàng</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'vietnamesecomment' data.id %}" class="btn btn-primary">Diễn đàn người dùng</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

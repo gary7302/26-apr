@@ -129,3 +129,7 @@ def turkishcart(request):
 @login_required(login_url='tamillogin')
 def tamilcart(request):
     return render(request,'tamil-store/cart.html')
+
+@login_required(login_url='vietnameselogin')
+def vietnamesecart(request):
+    return render(request,'vietnamese-store/cart.html')
