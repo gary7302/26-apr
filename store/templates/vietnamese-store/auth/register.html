@@ -1,4 +1,4 @@
-{% extends 'tamil-store/layouts/base.html' %}
+{% extends 'vietnamese-store/layouts/base.html' %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -6,34 +6,34 @@
             <form method="post" action="">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="" class="form-label">பயனர் பெயரை உள்ளிடவும் மின்னஞ்சலாக இருக்க வேண்டும்</label>
+                    <label for="" class="form-label">Nhập Username phải là Email</label>
                     {{form.username}}
                     {% if form.errors.username %}
                     <label class="text-danger">{{ form.errors.username }}</label>
                     {% endif %}
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">மின்னஞ்சலை பதிவுசெய்</label>
+                    <label for="" class="form-label">Nhập email của bạn</label>
                     {{form.email}}
                     {% if form.errors.email %}
                     <label class="text-danger">{{ form.errors.email}}</label>
                     {% endif %}
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">உங்கள் கடவுச்சொல்லை உள்ளிடவும்</label>
+                    <label for="" class="form-label">Nhập mật khẩu của bạn</label>
                     {{form.password1}}
                     {% if form.errors.password1 %}
                     <label class="text-danger">{{ form.errors.password1 }}</label>
                     {% endif %}
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">உங்கள் கடவுச்சொல்லை உறுதிப்படுத்தவும்</label>
+                    <label for="" class="form-label">Xác nhận mật khẩu của bạn</label>
                     {{form.password2}}
                     {% if form.errors.password2 %}
                     <label class="text-danger">{{ form.errors.password2}}</label>
                     {% endif %}
                 </div>
-                <button type="submit" class="btn btn-primary">சமர்ப்பிக்கவும்</button>
+                <button type="submit" class="btn btn-primary">Nộp</button>
             </form>
         </div>
     </div>

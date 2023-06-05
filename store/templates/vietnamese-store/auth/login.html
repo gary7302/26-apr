@@ -1,4 +1,4 @@
-{% extends 'tamil-store/layouts/base.html' %}
+{% extends 'vietnamese-store/layouts/base.html' %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -6,7 +6,7 @@
             <form method="post" action="">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="" class="form-label">பயனர்பெயரை உள்ளிடவும்</label>
+                    <label for="" class="form-label">Điền tên đăng nhập</label>
                     <input type="text" class="form-control" name="username" placeholder="Enter username"/>
                     {% if form.errors.username %}
                     <label class="text-danger">{{ form.errors.username }}</label>
@@ -14,13 +14,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="" class="form-label">உங்கள் கடவுச்சொல்லை உள்ளிடவும்</label>
+                    <label for="" class="form-label">Nhập mật khẩu của bạn</label>
                     <input type="password" class="form-control" name="password" placeholder="Enter your password"/>
                     {% if form.errors.password %}
                     <label class="text-danger">{{ form.errors.password}}</label>
                     {% endif %}
                 </div>
-                <button type="submit" class="btn btn-primary">உள்நுழைய</button>
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
             </form>
         </div>
     </div>

@@ -1,0 +1,32 @@
+{% extends 'tagalog-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Tungkol sa atin</h4>
+            <p>Kami ang American Uncle Sam Temple, na matatagpuan sa Los Angeles, California, na may mga branch sa Taiwan. Itaguyod ang hindi nagsasalakay na pag-iwas at paggamot sa kanser, bigyan ang mga pasyente ng libreng sticker ng kanser, libre habang-buhay. Tulungan ang mga pasyente ng cancer. Bawasan ang sakit at pahabain ang buhay nang hindi gumagastos ng isang barya. Naglilingkod sa 50 milyong pasyente ng kanser sa buong mundo, hindi kami tumatanggap ng anumang donasyon.</p>
+            <p class="para">Ang nagtatag ng asosasyon, si Lini Chiang, ay 71 taong gulang. Limang miyembro ng kanyang pamilya ang dumanas ng iba't ibang kanser. Apat sa kanila ang namatay. Ang average na pag-asa sa buhay ng mga namatay na miyembro ng pamilya ay 54 taong gulang. Determinado na gamitin ang kanyang imbensyon upang matulungan ang mga pasyente ng cancer sa buong mundo nang libre.</p>
+            <p>Ang mga pandikit na patch ay naglalaman ng mga aktibong sangkap ng mga herbal na gamot, at idinidikit sa mga nauugnay na acupuncture point na may nano-transdermal na teknolohiya. Ang mga gamot ay maaaring maihatid sa pamamagitan ng mga meridian upang maabot ang mga selula ng kanser at pigilan ang kanilang paglaki. Kasabay nito, naimbento ang simetriko na paraan ng pagdikit, at ang malamig at mainit na mga patch ay idinikit sa magkabilang panig ng simetriko meridian, upang ang kaligtasan sa sakit ng mga tao ay masipsip ang dalawang uri ng mga katangiang panggamot na ito, at awtomatikong magamit ang mga ito, na kung saan ay mas mahusay kaysa sa tradisyonal na paghahalo sa bibig at pagpapakulo. Herbal na sopas, mas epektibo</p>
+            <p class="para1">Inimbento din ng tagapagtatag ang www.fatebook.org, kung saan magagamit ang impormasyon ng kaarawan ng mga tao upang pag-aralan ang mga genetic na depekto ng mga tao sa istatistika at maghanap ng mga paraan upang mapabuti ang mga ito. Halimbawa, agad na mahahanap ng website na ito ang sanhi ng sakit na Parkinson ni Bill Gates, gamitin ang aming mga espesyal na patch, at pagkatapos ng isang linggong pagdikit, makakakita ka ng makabuluhang pagpapabuti sa ulat ng pagsusuri sa dugo.</p>
+            <p>Ang aming mga patch ay maaaring idikit sa mga acupoints sa talampakan, at ang lagnat ay mababawasan kaagad sa kalahating oras. Ito ay ligtas, epektibo, mabilis at hindi nagsasalakay, at may maraming klinikal na patunay</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'tagalogcomment' data.id %}" class="btn btn-primary">Forum ng Gumagamit</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
