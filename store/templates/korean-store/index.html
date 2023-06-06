@@ -1,0 +1,32 @@
+{% extends 'korean-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">회사 소개</h4>
+            <p>저희는 미국 캘리포니아주 로스엔젤레스에 위치한 미국식 엉클샘 사원으로 대만에 지사가 있습니다. 비 침습적 암 예방 및 치료를 옹호하고 환자에게 무료 암 스티커를 평생 무료로 제공합니다. 암환자를 도와주세요. 한 푼도 쓰지 않고 고통을 줄이고 수명을 연장하십시오. 전 세계적으로 5천만 명의 암 환자에게 서비스를 제공하는 당사는 어떠한 기부도 받지 않습니다.</p>
+            <p class="para">협회 창립자인 Lini Chiang은 71세입니다. 그의 가족 중 다섯 명은 각기 다른 암을 앓았다. 그들 중 네 명이 사망했습니다. 고인의 평균 수명은 54세다. 전 세계의 암 환자를 무료로 돕기 위해 그의 발명품을 사용하기로 결정했습니다.</p>
+            <p>점착패치는 한약의 유효성분을 함유하고 있으며, 나노경피기술로 해당 경혈에 부착됩니다. 경락을 통해 약물을 전달하여 암세포에 도달하고 성장을 억제할 수 있습니다. 동시에 대칭 점착 방법을 발명하고 대칭 경락의 양쪽에 한 패치와 핫 패치를 붙여서 사람들의 면역이 이 두 가지 유형의 약효를 흡수하고 자동으로 효과적으로 사용할 수 있도록 했습니다. 전통적인 구두 혼합 및 끓는 것보다 낫습니다. 허브 수프, 더 효과적</p>
+            <p class="para1">창립자는 또한 사람들의 생일 정보를 통해 사람들의 유전적 결함을 통계적으로 분석하고 개선 방법을 찾을 수 있는 www.fatebook.org를 발명했습니다. 예를 들어, 이 웹사이트는 빌게이츠의 파킨슨병의 원인을 즉시 찾아낼 수 있고, 우리의 특수 패치를 사용하고, 일주일 동안 붙이면 혈액 검사 보고서에서 상당한 개선을 볼 수 있습니다.</p>
+            <p>우리의 패치는 발바닥의 경혈에 붙일 수 있으며 30분 안에 열이 즉시 내려갈 것입니다. 안전하고 효과적이며 빠르고 비침습적이며 많은 임상 증거가 있습니다.</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'koreancomment' data.id %}" class="btn btn-primary">사용자 포럼</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

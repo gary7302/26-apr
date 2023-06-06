@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview,turkishview,tamilview,vietnameseview,tagalogview
+from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview,turkishview,tamilview,vietnameseview,tagalogview,koreanview
 from django.views.i18n import set_language
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
     path('tamilregister', tamilview.register, name='tamilregister'),
     path('vietnameseregister', vietnameseview.register, name='vietnameseregister'),
     path('tagalogregister', tagalogview.register, name='tagalogregister'),
+    path('koreanregister', koreanview.register, name='koreanregister'),
     path('login',authview.loginpage,name='loginpage'),
     path('hindilogin',authview.hindiloginpage,name='hindilogin'),
     path('chineselogin',authview.chineseloginpage,name='chineselogin'),
@@ -46,6 +47,7 @@ urlpatterns = [
     path('tamillogin', authview.tamilloginpage, name='tamillogin'),
     path('vietnameselogin', authview.vietnameseloginpage, name='vietnameselogin'),
     path('tagaloglogin', authview.tagalogloginpage, name='tagaloglogin'),
+    path('koreanlogin', authview.koreanloginpage, name='koreanlogin'),
     path('logout',authview.logoutpage,name='logoutpage'),
     path('add-to-cart',cartview.addtocart,name='addtocart'),
     path('cart',cartview.showCart,name='cart'),
@@ -68,6 +70,7 @@ urlpatterns = [
     path('tamilcart', cartview.tamilcart, name='tamilcart'),
     path('vietnamesecart', cartview.vietnamesecart, name='vietnamesecart'),
     path('tagalogcart', cartview.tagalogcart, name='tagalogcart'),
+    path('koreancart', cartview.koreancart, name='koreancart'),
     path('update-cart',cartview.updatecart,name="updatecart"),
     path('delete-cart-item',cartview.deletecartitem,name="deletecartitem"),
     path('checkout',checkview.checkout,name='checkout'),
@@ -91,6 +94,7 @@ urlpatterns = [
     path('tamilmaincheckout', checkview.tamilmaincheckout, name='tamilmaincheckout'),
     path('vietnamesemaincheckout', checkview.vietnamesemaincheckout, name='vietnamesemaincheckout'),
     path('tagalogmaincheckout', checkview.tagalogmaincheckout, name='tagalogmaincheckout'),
+    path('koreanmaincheckout', checkview.koreanmaincheckout, name='koreanmaincheckout'),
     path('place-order',checkview.placeorder,name="placeorder"),
     path('charge', paymentview.charge, name='charge'),
     path('success/', paymentview.success, name='success'),
@@ -118,6 +122,7 @@ urlpatterns = [
     path('tamil', tamilview.tamilhome, name='tamil'),
     path('vietnamese',vietnameseview.vietnamesehome,name='vietnamese'),
     path('tagalog', tagalogview.tagaloghome, name='tagalog'),
+    path('korean', koreanview.koreanhome, name='korean'),
     path('details',details,name='details'),
     path('chinese-details',chineseview.chinesedetails,name='chinese-details'),
     path('hindi-details',hindiview.hindidetails,name='hindi-details'),
@@ -138,6 +143,7 @@ urlpatterns = [
     path('tamildetails', tamilview.tamildetails, name='tamildetails'),
     path('vietnamesedetails', vietnameseview.vietnamesedetails, name='vietnamesedetails'),
     path('tagalogdetails', tagalogview.tagalogdetails, name='tagalogdetails'),
+    path('koreandetails', koreanview.koreandetails, name='koreandetails'),
     path('getpatch',getpatch,name='getpatch'),
     path('chinese-getpatch',chineseview.chinesegetpatch,name='chinese-getpatch'),
     path('hindi-getpatch',hindiview.hindigetpatch,name='hindi-getpatch'),
@@ -158,6 +164,7 @@ urlpatterns = [
     path('tamilgetpatch', tamilview.tamilgetpatch, name='tamilgetpatch'),
     path('vietnamesegetpatch', vietnameseview.vietnamesegetpatch, name='vietnamesegetpatch'),
     path('tagaloggetpatch', tagalogview.tagaloggetpatch, name='tagaloggetpatch'),
+    path('koreangetpatch',koreanview.koreangetpatch, name='koreangetpatch'),
     path('usepatch',usepatch,name='usepatch'),
     path('chinese-usepatch',chineseview.chineseusepatch,name='chinese-usepatch'),
     path('hindi-usepatch',hindiview.hindiusepatch,name='hindi-usepatch'),
@@ -178,6 +185,7 @@ urlpatterns = [
     path('tamilusepatch', tamilview.tamilusepatch, name='tamilusepatch'),
     path('vietnameseusepatch', vietnameseview.vietnameseusepatch, name='vietnameseusepatch'),
     path('tagalogusepatch', tagalogview.tagalogusepatch, name='tagalogusepatch'),
+    path('koreanusepatch', koreanview.koreanusepatch, name='koreanusepatch'),
     path('hindicomment/<int:id>',hindiview.hindicomment,name='hindicomment'),
     path('hindiaddComment/<int:id>',hindiview.hindiaddcomment,name='hindiaddComment'),
     path('spanishcomment/<int:id>',spanishview.spanishcomment,name='spanishcomment'),
@@ -214,5 +222,7 @@ urlpatterns = [
     path('vietnameseaddcomment/<int:id>', vietnameseview.vietnameseaddcomment, name='vietnameseaddcomment'),
     path('tagalogcomment/<int:id>', tagalogview.tagalogcomment, name='tagalogcomment'),
     path('tagalogaddcomment/<int:id>', tagalogview.tagalogaddcomment, name='tagalogaddcomment'),
+    path('koreancomment/<int:id>', koreanview.koreancomment, name='koreancomment'),
+    path('koreanaddcomment/<int:id>', koreanview.koreanaddcomment, name='koreanaddcomment'),
     path('shopping',shopping,name='shopping'),
 ]

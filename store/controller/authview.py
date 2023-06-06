@@ -424,3 +424,23 @@ def tagalogloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/tagaloglogin')
         return render(request, 'tagalog-store/auth/login.html')
+
+def koreanloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/korean')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/korean')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/koreanlogin')
+        return render(request, 'korean-store/auth/login.html')
