@@ -141,3 +141,7 @@ def tagalogcart(request):
 @login_required(login_url='koreanlogin')
 def koreancart(request):
     return render(request,'korean-store/cart.html')
+
+@login_required(login_url='iranianlogin')
+def iraniancart(request):
+    return render(request,'iranian-store/cart.html')

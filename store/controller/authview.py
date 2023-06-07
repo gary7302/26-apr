@@ -444,3 +444,23 @@ def koreanloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/koreanlogin')
         return render(request, 'korean-store/auth/login.html')
+
+def iranianloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/iranian')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/iranian')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/iranianlogin')
+        return render(request, 'iranian-store/auth/login.html')

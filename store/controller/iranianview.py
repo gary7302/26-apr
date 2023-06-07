@@ -7,33 +7,33 @@ from django.contrib.auth import login,logout,authenticate
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
-def koreanhome(request):
-    category=KoreanCategory.objects.all()
-    return render(request,'korean-store/index.html',{'category':category})
+def iranianhome(request):
+    category=IranianCategory.objects.all()
+    return render(request,'iranian-store/index.html',{'category':category})
 
 
-def koreandetails(request):
-    return render(request,'korean-store/details.html')
+def iraniandetails(request):
+    return render(request,'iranian-store/details.html')
 
-def koreancomment(request,id):
-    eachProduct=KoreanCategory.objects.get(id=id)
-    form=KoreanCommentForm()
+def iraniancomment(request,id):
+    eachProduct=IranianCategory.objects.get(id=id)
+    form=IranianCommentForm()
     context={'form':form,'eachProduct':eachProduct}
-    return render(request,'korean-store/coment.html',context)
+    return render(request,'iranian-store/coment.html',context)
 
-@login_required(login_url='koreanlogin')
-def koreanaddcomment(request,id):
+@login_required(login_url='iranianlogin')
+def iranianaddcomment(request,id):
     if request.method == "POST":
-        form=KoreanCommentForm(request.POST,request.FILES)
+        form=IranianCommentForm(request.POST,request.FILES)
         if form.is_valid():
             commenter_name = request.user
             comment_body = form.cleaned_data['comment_body']
             comment_image = form.cleaned_data['comment_image']
-            eachProduct = KoreanCategory.objects.get(id=id)
-            d = KoreanComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,
+            eachProduct = IranianCategory.objects.get(id=id)
+            d = IranianComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,
                              comment_image=comment_image, created_at=datetime.now())
             d.save()
-            return redirect('korean')
+            return redirect('iranian')
         return HttpResponse('<h1>We are unable to add your comment</h1>')
 
 def register(request):
@@ -45,14 +45,14 @@ def register(request):
             try:
                 user=User.objects.create_user(username=username,password=form.cleaned_data['password1'])
                 user.save()
-                return redirect('/koreanlogin')
+                return redirect('/iranianlogin')
             except IntegrityError:
                 messages.warning(request,'This username already in use. Please choose another')
     context={'form':form}
-    return render(request,'korean-store/auth/register.html',context)
+    return render(request,'iranian-store/auth/register.html',context)
 
-def koreangetpatch(request):
-    return render(request,'korean-store/getpatch.html')
+def iraniangetpatch(request):
+    return render(request,'iranian-store/getpatch.html')
 
-def koreanusepatch(request):
-    return render(request,'korean-store/usepatch.html')
+def iranianusepatch(request):
+    return render(request,'iranian-store/usepatch.html')
