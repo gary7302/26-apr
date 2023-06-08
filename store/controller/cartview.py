@@ -145,3 +145,7 @@ def koreancart(request):
 @login_required(login_url='iranianlogin')
 def iraniancart(request):
     return render(request,'iranian-store/cart.html')
+
+@login_required(login_url='hausalogin')
+def hausacart(request):
+    return render(request,'hausa-store/cart.html')
