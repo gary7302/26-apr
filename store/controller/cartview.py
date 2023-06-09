@@ -149,3 +149,7 @@ def iraniancart(request):
 @login_required(login_url='hausalogin')
 def hausacart(request):
     return render(request,'hausa-store/cart.html')
+
+@login_required(login_url='egyptianlogin')
+def egyptiancart(request):
+    return render(request,'egyptian-store/cart.html')

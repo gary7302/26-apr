@@ -484,3 +484,23 @@ def hausaloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/hausalogin')
         return render(request, 'hausa-store/auth/login.html')
+
+def egyptianloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/egyptian')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/egyptian')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/egyptianlogin')
+        return render(request, 'egyptian-store/auth/login.html')

@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview,turkishview,tamilview,vietnameseview,tagalogview,koreanview,iranianview,hausaview
+from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview,turkishview,tamilview,vietnameseview,tagalogview,koreanview,iranianview,hausaview,egyptianview
 from django.views.i18n import set_language
 
 urlpatterns = [
@@ -29,6 +29,7 @@ urlpatterns = [
     path('koreanregister', koreanview.register, name='koreanregister'),
     path('iranianregister', iranianview.register, name='iranianregister'),
     path('hausaregister', hausaview.register, name='hausaregister'),
+    path('egyptianregister',egyptianview.register, name='egyptianregister'),
     path('login',authview.loginpage,name='loginpage'),
     path('hindilogin',authview.hindiloginpage,name='hindilogin'),
     path('chineselogin',authview.chineseloginpage,name='chineselogin'),
@@ -52,6 +53,7 @@ urlpatterns = [
     path('koreanlogin', authview.koreanloginpage, name='koreanlogin'),
     path('iranianlogin', authview.iranianloginpage, name='iranianlogin'),
     path('hausalogin', authview.hausaloginpage, name='hausalogin'),
+    path('egyptianlogin', authview.egyptianloginpage, name='egyptianlogin'),
     path('logout',authview.logoutpage,name='logoutpage'),
     path('add-to-cart',cartview.addtocart,name='addtocart'),
     path('cart',cartview.showCart,name='cart'),
@@ -77,6 +79,7 @@ urlpatterns = [
     path('koreancart', cartview.koreancart, name='koreancart'),
     path('iraniancart', cartview.iraniancart, name='iraniancart'),
     path('hausacart', cartview.hausacart, name='hausacart'),
+    path('egyptiancart', cartview.egyptiancart, name='egyptiancart'),
     path('update-cart',cartview.updatecart,name="updatecart"),
     path('delete-cart-item',cartview.deletecartitem,name="deletecartitem"),
     path('checkout',checkview.checkout,name='checkout'),
@@ -103,6 +106,7 @@ urlpatterns = [
     path('koreanmaincheckout', checkview.koreanmaincheckout, name='koreanmaincheckout'),
     path('iranianmaincheckout', checkview.iranianmaincheckout, name='iranianmaincheckout'),
     path('hausamaincheckout', checkview.hausamaincheckout, name='hausamaincheckout'),
+    path('egyptianmaincheckout', checkview.egyptianmaincheckout, name='egyptianmaincheckout'),
     path('place-order',checkview.placeorder,name="placeorder"),
     path('charge', paymentview.charge, name='charge'),
     path('success/', paymentview.success, name='success'),
@@ -133,6 +137,7 @@ urlpatterns = [
     path('korean', koreanview.koreanhome, name='korean'),
     path('iranian', iranianview.iranianhome, name='iranian'),
     path('hausa', hausaview.hausahome, name='hausa'),
+    path('egyptian', egyptianview.egyptianhome, name='egyptian'),
     path('details',details,name='details'),
     path('chinese-details',chineseview.chinesedetails,name='chinese-details'),
     path('hindi-details',hindiview.hindidetails,name='hindi-details'),
@@ -156,6 +161,7 @@ urlpatterns = [
     path('koreandetails', koreanview.koreandetails, name='koreandetails'),
     path('iraniandetails', iranianview.iraniandetails, name='iraniandetails'),
     path('hausadetails', hausaview.hausadetails, name='hausadetails'),
+    path('egyptiandetails', egyptianview.egyptiandetails, name='egyptiandetails'),
     path('getpatch',getpatch,name='getpatch'),
     path('chinese-getpatch',chineseview.chinesegetpatch,name='chinese-getpatch'),
     path('hindi-getpatch',hindiview.hindigetpatch,name='hindi-getpatch'),
@@ -179,6 +185,7 @@ urlpatterns = [
     path('koreangetpatch',koreanview.koreangetpatch, name='koreangetpatch'),
     path('iraniangetpatch', iranianview.iraniangetpatch, name='iraniangetpatch'),
     path('hausagetpatch', hausaview.hausagetpatch, name='hausagetpatch'),
+    path('egyptiangetpatch', egyptianview.egyptiangetpatch, name='egyptiangetpatch'),
     path('usepatch',usepatch,name='usepatch'),
     path('chinese-usepatch',chineseview.chineseusepatch,name='chinese-usepatch'),
     path('hindi-usepatch',hindiview.hindiusepatch,name='hindi-usepatch'),
@@ -202,6 +209,7 @@ urlpatterns = [
     path('koreanusepatch', koreanview.koreanusepatch, name='koreanusepatch'),
     path('iranianusepatch', iranianview.iranianusepatch, name='iranianusepatch'),
     path('hausausepatch', hausaview.hausausepatch, name='hausausepatch'),
+    path('egyptianusepatch', egyptianview.egyptianusepatch, name='egyptianusepatch'),
     path('hindicomment/<int:id>',hindiview.hindicomment,name='hindicomment'),
     path('hindiaddComment/<int:id>',hindiview.hindiaddcomment,name='hindiaddComment'),
     path('spanishcomment/<int:id>',spanishview.spanishcomment,name='spanishcomment'),
@@ -244,5 +252,7 @@ urlpatterns = [
     path('iranianaddcomment/<int:id>', iranianview.iranianaddcomment, name='iranianaddcomment'),
     path('hausacomment/<int:id>', hausaview.hausacomment, name='hausacomment'),
     path('hausaaddcomment/<int:id>', hausaview.hausaaddcomment, name='hausaaddcomment'),
+    path('egyptiancomment/<int:id>', egyptianview.egyptiancomment, name='egyptiancomment'),
+    path('egyptianaddcomment/<int:id>', egyptianview.egyptianaddcomment, name='egyptianaddcomment'),
     path('shopping',shopping,name='shopping'),
 ]
