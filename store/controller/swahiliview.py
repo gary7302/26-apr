@@ -7,29 +7,29 @@ from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
-def egyptianhome(request):
-    category=ArabicCategory.objects.all()
-    return render(request,'egyptian-store/index.html',{'category':category})
+def swahilihome(request):
+    category=SwahiliCategory.objects.all()
+    return render(request,'swahili-store/index.html',{'category':category})
 
-def egyptiancomment(request,id):
-    eachProduct = ArabicCategory.objects.get(id=id)
+def swahilicomment(request,id):
+    eachProduct = SwahiliCategory.objects.get(id=id)
 
-    form = ArabicCommentForm()
+    form = SwahiliCommentForm()
     context = {'form': form, 'eachProduct': eachProduct}
-    return render(request, 'egyptian-store/coment.html', context)
+    return render(request, 'swahili-store/coment.html', context)
 
-@login_required(login_url='egyptianlogin')
-def egyptianaddcomment(request,id):
+@login_required(login_url='swahililogin')
+def swahiliaddcomment(request,id):
     if request.method == "POST":
-        form = ArabicCommentForm(request.POST, request.FILES)
+        form = SwahiliCommentForm(request.POST, request.FILES)
         if form.is_valid():
             commenter_name = request.user
             comment_body = form.cleaned_data['comment_body']
             comment_image = form.cleaned_data['comment_image']
-            eachProduct = ArabicCategory.objects.get(id=id)
-            d = ArabicComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,comment_image=comment_image, created_at=datetime.now())
+            eachProduct = SwahiliCategory.objects.get(id=id)
+            d = SwahiliComment(product=eachProduct, commenter_name=commenter_name, comment_body=comment_body,comment_image=comment_image, created_at=datetime.now())
             d.save()
-            return redirect('egyptian')
+            return redirect('swahili')
     return HttpResponse('<h1>We are unable to add your comment</h1>')
 
 def register(request):
@@ -41,17 +41,17 @@ def register(request):
             try:
                 user=User.objects.create_user(username=username,password=form.cleaned_data['password1'])
                 user.save()
-                return redirect('/egyptianlogin')
+                return redirect('/swahililogin')
             except IntegrityError:
                 messages.warning(request,'This username already in use. Please choose another')
     context={'form':form}
-    return render(request,'egyptian-store/auth/register.html',context)
+    return render(request,'swahili-store/auth/register.html',context)
 
-def egyptiandetails(request):
-    return render(request,'egyptian-store/details.html')
+def swahilidetails(request):
+    return render(request,'swahili-store/details.html')
 
-def egyptiangetpatch(request):
-    return render(request,'egyptian-store/getpatch.html')
+def swahiligetpatch(request):
+    return render(request,'swahili-store/getpatch.html')
 
-def egyptianusepatch(request):
-    return render(request,'egyptian-store/usepatch.html')
+def swahiliusepatch(request):
+    return render(request,'swahili-store/usepatch.html')

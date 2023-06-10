@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'egyptian' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'swahili' %}">Home</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -24,10 +24,10 @@
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'egyptianlogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'swahililogin' %}" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'egyptianregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'swahiliregister' %}" >SignUp</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -59,8 +59,7 @@
             <li><a class="dropdown-item" href="{% url 'korean' %}">Korean</a></li>
             <li><a class="dropdown-item" href="{% url 'iranian' %}">Iranian</a></li>
             <li><a class="dropdown-item" href="{% url 'hausa' %}">Hausa</a></li>
-            <li><a class="dropdown-item" href="{% url 'egyptian' %}">Egyptian</a></li>
-            <li><a class="dropdown-item" href="/">Swahili</a></li>
+            <li><a class="dropdown-item" href="{% url 'swahili' %}">Swahili</a></li>
             <li><a class="dropdown-item" href="/">Javanese</a></li>
             <li><a class="dropdown-item" href="/">Italian</a></li>
             <li><a class="dropdown-item" href="/">Punjabi</a></li>
@@ -111,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'egyptiangetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'swahiligetpatch' %}">GetPatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'egyptianusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'swahiliusepatch' %}" >UsePatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'egyptiandetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'swahilidetails' %}">Theory</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'egyptiancart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'swahilicart' %}">Cart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>

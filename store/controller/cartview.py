@@ -150,6 +150,6 @@ def iraniancart(request):
 def hausacart(request):
     return render(request,'hausa-store/cart.html')
 
-@login_required(login_url='egyptianlogin')
-def egyptiancart(request):
-    return render(request,'egyptian-store/cart.html')
+@login_required(login_url='swahililogin')
+def swahilicart(request):
+    return render(request,'swahili-store/cart.html')

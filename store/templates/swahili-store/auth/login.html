@@ -1,4 +1,4 @@
-{% extends 'egyptian-store/layouts/base.html' %}
+{% extends 'swahili-store/layouts/base.html' %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -6,7 +6,7 @@
             <form method="post" action="">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="" class="form-label">ادخل اسم المستخدم</label>
+                    <label for="" class="form-label">Ingiza jina la mtumiaji</label>
                     <input type="text" class="form-control" name="username" placeholder="Enter username"/>
                     {% if form.errors.username %}
                     <label class="text-danger">{{ form.errors.username }}</label>
@@ -14,13 +14,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="" class="form-label">ادخل رقمك السري</label>
+                    <label for="" class="form-label">Weka Nenosiri Lako</label>
                     <input type="password" class="form-control" name="password" placeholder="Enter your password"/>
                     {% if form.errors.password %}
                     <label class="text-danger">{{ form.errors.password}}</label>
                     {% endif %}
                 </div>
-                <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                <button type="submit" class="btn btn-primary">Ingia</button>
             </form>
         </div>
     </div>

@@ -1,0 +1,32 @@
+{% extends 'swahili-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Kuhusu sisi</h4>
+            <p>Sisi ni Hekalu la Mjomba Sam wa Marekani, lililoko Los Angeles, California, lenye matawi nchini Taiwan. Tetea uzuiaji na matibabu ya saratani isiyo vamizi, wape wagonjwa vibandiko vya bure vya saratani, bure kwa maisha yote. Saidia wagonjwa wa saratani. Kupunguza maumivu na kuongeza maisha bila kutumia dime. Kuhudumia wagonjwa wa saratani milioni 50 duniani kote, hatukubali michango yoyote.</p>
+            <p class="para">Mwanzilishi wa chama hicho, Lini Chiang, ana umri wa miaka 71. Watu watano wa familia yake waliugua saratani tofauti. Wanne kati yao wamekufa. Matarajio ya wastani ya maisha ya wanafamilia waliokufa ni miaka 54. Aliamua kutumia uvumbuzi wake kusaidia wagonjwa wa saratani kote ulimwenguni bila malipo.</p>
+            <p>Vibandiko vya wambiso vina viambato vinavyotumika vya dawa za mitishamba, na vinabandikwa kwenye sehemu husika za acupuncture na teknolojia ya nano-transdermal. Dawa za kulevya zinaweza kutolewa kupitia meridians kufikia seli za saratani na kuzuia ukuaji wao. Wakati huo huo, njia ya kushikamana kwa ulinganifu iligunduliwa, na sehemu za baridi na moto ziliwekwa pande zote mbili za meridians zenye ulinganifu, ili kinga ya watu iweze kunyonya aina hizi mbili za mali ya dawa, na kuzitumia moja kwa moja kwa ufanisi. ni bora kuliko mchanganyiko wa kawaida wa mdomo na kuchemsha. Supu ya mimea, yenye ufanisi zaidi</p>
+            <p class="para1">Mwanzilishi pia alivumbua www.fatebook.org, ambapo taarifa za siku ya kuzaliwa ya watu zinaweza kutumika kuchanganua kitakwimu kasoro za kijeni za watu na kutafuta njia za kuziboresha. Kwa mfano, tovuti hii inaweza kupata mara moja sababu ya ugonjwa wa Parkinson wa Bill Gates, kutumia patches zetu maalum, na baada ya wiki ya kushikamana, unaweza kuona uboreshaji mkubwa katika ripoti ya mtihani wa damu.</p>
+            <p>Vipande vyetu vinaweza kuingizwa kwenye acupoints kwenye miguu ya miguu, na homa itapungua mara moja kwa nusu saa. Ni salama, bora, haraka na si vamizi, na ina uthibitisho mwingi wa kimatibabu</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'swahilicomment' data.id %}" class="btn btn-primary">Jukwaa la Watumiaji</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

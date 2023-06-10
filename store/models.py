@@ -664,3 +664,27 @@ class HausaComment(models.Model):
 
     def __str__(self):
         return "%s %s" %(self.product.name,self.commenter_name.username)
+
+def get_file_path_swahili(request, filename):
+    original_filename = filename
+    nowTime = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
+    filename = '%s%s' % (nowTime, original_filename)
+    return os.path.join('swahili_uploads/', filename)
+class SwahiliCategory(models.Model):
+    slug=models.CharField(max_length=150,null=False,blank=False)
+    name=models.CharField(max_length=150,null=False,blank=False)
+    image=models.ImageField(upload_to=get_file_path_swahili,null=True,blank=True)
+    description=models.TextField(max_length=500,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
+
+class SwahiliComment(models.Model):
+    product=models.ForeignKey(SwahiliCategory,on_delete=models.CASCADE,related_name="swahilicomment")
+    commenter_name=models.ForeignKey(User,on_delete=models.CASCADE)
+    comment_body=models.TextField()
+    comment_image=models.ImageField(upload_to=get_file_path_swahili,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "%s %s" %(self.product.name,self.commenter_name.username)

@@ -485,10 +485,10 @@ def hausaloginpage(request):
                 return redirect('/hausalogin')
         return render(request, 'hausa-store/auth/login.html')
 
-def egyptianloginpage(request):
+def swahililoginpage(request):
     if request.user.is_authenticated:
         messages.warning(request,'You are already logged in')
-        return redirect('/egyptian')
+        return redirect('/swahili')
     else:
 
         if request.method == 'POST':
@@ -499,8 +499,8 @@ def egyptianloginpage(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'Logged in successfully')
-                return redirect('/egyptian')
+                return redirect('/swahili')
             else:
                 messages.error(request, 'Invalid username or password')
-                return redirect('/egyptianlogin')
-        return render(request, 'egyptian-store/auth/login.html')
+                return redirect('/swahililogin')
+        return render(request, 'swahili-store/auth/login.html')
