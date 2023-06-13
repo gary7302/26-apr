@@ -688,3 +688,51 @@ class SwahiliComment(models.Model):
 
     def __str__(self):
         return "%s %s" %(self.product.name,self.commenter_name.username)
+
+def get_file_path_javanese(request, filename):
+    original_filename = filename
+    nowTime = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
+    filename = '%s%s' % (nowTime, original_filename)
+    return os.path.join('javanese_uploads/', filename)
+class JavaneseCategory(models.Model):
+    slug=models.CharField(max_length=150,null=False,blank=False)
+    name=models.CharField(max_length=150,null=False,blank=False)
+    image=models.ImageField(upload_to=get_file_path_javanese,null=True,blank=True)
+    description=models.TextField(max_length=500,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
+
+class JavaneseComment(models.Model):
+    product=models.ForeignKey(JavaneseCategory,on_delete=models.CASCADE,related_name="javanesecomment")
+    commenter_name=models.ForeignKey(User,on_delete=models.CASCADE)
+    comment_body=models.TextField()
+    comment_image=models.ImageField(upload_to=get_file_path_javanese,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "%s %s" %(self.product.name,self.commenter_name.username)
+
+def get_file_path_italian(request, filename):
+    original_filename = filename
+    nowTime = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
+    filename = '%s%s' % (nowTime, original_filename)
+    return os.path.join('italian_uploads/', filename)
+class ItalianCategory(models.Model):
+    slug=models.CharField(max_length=150,null=False,blank=False)
+    name=models.CharField(max_length=150,null=False,blank=False)
+    image=models.ImageField(upload_to=get_file_path_italian,null=True,blank=True)
+    description=models.TextField(max_length=500,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
+
+class ItalianComment(models.Model):
+    product=models.ForeignKey(ItalianCategory,on_delete=models.CASCADE,related_name="italiancomment")
+    commenter_name=models.ForeignKey(User,on_delete=models.CASCADE)
+    comment_body=models.TextField()
+    comment_image=models.ImageField(upload_to=get_file_path_italian,null=True,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "%s %s" %(self.product.name,self.commenter_name.username)

@@ -331,3 +331,23 @@ def swahilimaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'swahili-store/maincheckout.html',context)
+
+@login_required(login_url='javaneselogin')
+def javanesemaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'javanese-store/maincheckout.html',context)
+
+@login_required(login_url='italianlogin')
+def italianmaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'italian-store/maincheckout.html',context)

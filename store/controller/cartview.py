@@ -153,3 +153,11 @@ def hausacart(request):
 @login_required(login_url='swahililogin')
 def swahilicart(request):
     return render(request,'swahili-store/cart.html')
+
+@login_required(login_url='javaneselogin')
+def javanesecart(request):
+    return render(request,'javanese-store/cart.html')
+
+@login_required(login_url='italianlogin')
+def italiancart(request):
+    return render(request,'italian-store/cart.html')

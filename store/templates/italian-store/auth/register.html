@@ -1,0 +1,42 @@
+{% extends 'italian-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="" class="form-label">Inserire il nome utente deve essere e-mail</label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                    <label class="text-danger">{{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Inserisci il tuo indirizzo email</label>
+                    {{form.email}}
+                    {% if form.errors.email %}
+                    <label class="text-danger">{{ form.errors.email}}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Inserisci la tua password</label>
+                    {{form.password1}}
+                    {% if form.errors.password1 %}
+                    <label class="text-danger">{{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Conferma la tua password</label>
+                    {{form.password2}}
+                    {% if form.errors.password2 %}
+                    <label class="text-danger">{{ form.errors.password2}}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">Invia</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends 'javanese-store/layouts/base.html' %}
+{% block content %}
+<div class="container main">
+    <div class="row">
+        <div class="col-12 about">
+            <h4 class="head">Babagan awake dhewe</h4>
+            <p>We are American Paman Sam Temple, dumunung ing Los Angeles, California, karo cabang ing Taiwan. Nyegah lan perawatan kanker non-invasif, nyedhiyakake stiker kanker gratis kanggo pasien, gratis seumur hidup. Mbantu pasien kanker. Ngurangi rasa lara lan ndawakake umur tanpa mbuwang dhuwit. Nglayani 50 yuta pasien kanker ing saindenging jagad, kita ora nampa sumbangan.</p>
+            <p class="para">Pangadeg asosiasi kasebut, Lini Chiang, umure 71 taun. Lima anggota kulawargane nandhang macem-macem kanker. Wong papat wis tiwas. Rata-rata pangarep-arep urip anggota kulawarga sing wis tilar donya yaiku 54 taun. Ditemtokake nggunakake penemuan kasebut kanggo mbantu pasien kanker ing saindenging jagad kanthi gratis.</p>
+            <p>Tambalan adesif ngemot bahan aktif obat-obatan herbal, lan ditempelake ing titik akupunktur sing relevan kanthi teknologi nano-transdermal. Obat bisa dikirim liwat meridian kanggo nggayuh sel kanker lan nyegah pertumbuhane. Ing wektu sing padha, cara nempel simetris diciptakake, lan patch kadhemen lan panas ditempelake ing loro-lorone meridian simetris, supaya kekebalan wong bisa nyerep rong jinis obat kasebut, lan kanthi otomatis nggunakake efektif, sing luwih apik tinimbang campuran lisan lan nggodhok tradisional. Sup herbal, luwih efektif</p>
+            <p class="para1">Pendhiri uga nemokke www.fatebook.org, liwat informasi ulang tahun wong bisa digunakake kanggo nganalisa statistik cacat genetis wong lan golek cara kanggo nambah. Contone, situs web iki bisa langsung nemokake panyebab penyakit Parkinson Bill Gates, nggunakake patch khusus, lan sawise seminggu nempel, sampeyan bisa ndeleng peningkatan sing signifikan ing laporan tes getih.</p>
+            <p>Patch kita bisa ditempelake ing acupoints ing tlapak sikil, lan mriyang bakal suda langsung ing setengah jam. Aman, efektif, cepet lan ora invasif, lan akeh bukti klinis</p>
+            <h6 class="float-end">Info: gary7302@gmail.com , Watsapp : +1 626 782 5322 , WeChat : gary7302</h6>
+        </div>
+
+
+         {% for data in category %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mt-2">
+                    <div class="card-body text-center">
+                        <img src="{{ data.image.url }}" class="w-100" />
+
+                        <h5 class="card-title">{{data.name}}</h5>
+                        <a href="{% url 'javanesecomment' data.id %}" class="btn btn-primary">Forum Panganggo</a>
+                    </div>
+                </div>
+            </div>
+
+         {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

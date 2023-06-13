@@ -504,3 +504,43 @@ def swahililoginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/swahililogin')
         return render(request, 'swahili-store/auth/login.html')
+
+def javaneseloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/javanese')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/javanese')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/javaneselogin')
+        return render(request, 'javanese-store/auth/login.html')
+
+def italianloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/italian')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/italian')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/italianlogin')
+        return render(request, 'italian-store/auth/login.html')

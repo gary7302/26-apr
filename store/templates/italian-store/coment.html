@@ -1,0 +1,39 @@
+{% extends 'italian-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form method="post" action="{% url 'italianaddcomment' eachProduct.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit" >Aggiungi un commento</button>
+        <input type="hidden" name="product_id" value="{{eachProduct.id}}">
+      {{ form.as_p }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h4>Vedi tutti i commenti</h4>
+      <hr>
+      {% if not eachProduct.italiancomment.all %}
+        <p>Ancora nessun commento...Scrivi il primo commento</p>
+      {% else %}
+        {% for comment in eachProduct.italiancomment.all %}
+      <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
+          <h5>{{ comment.commenter_name }}</h5>
+          <h6>{{ comment.comment_body }}</h6>
+      <p>{{ comment.created_at }}</p>
+      <hr>
+
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+<script>
+<!--  var commentButton=document.getElementById('addComment');-->
+</script>
+
+{% endblock scripts %}

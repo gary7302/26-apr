@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview,turkishview,tamilview,vietnameseview,tagalogview,koreanview,iranianview,hausaview,swahiliview
+from store.controller import authview,cartview,checkview,chineseview,paymentview,hindiview,spanishview,frenchview,arabicview,bengaliview,russianview,portugueseview,urduview,indonesianview,germanview,nigerianview,japaneseview,marathiview,teluguview,turkishview,tamilview,vietnameseview,tagalogview,koreanview,iranianview,hausaview,swahiliview,javaneseview,italianview
 from django.views.i18n import set_language
 
 urlpatterns = [
@@ -30,6 +30,8 @@ urlpatterns = [
     path('iranianregister', iranianview.register, name='iranianregister'),
     path('hausaregister', hausaview.register, name='hausaregister'),
     path('swahiliregister',swahiliview.register, name='swahiliregister'),
+    path('javaneseregister', javaneseview.register, name='javaneseregister'),
+    path('italianregister', italianview.register, name='italianregister'),
     path('login',authview.loginpage,name='loginpage'),
     path('hindilogin',authview.hindiloginpage,name='hindilogin'),
     path('chineselogin',authview.chineseloginpage,name='chineselogin'),
@@ -54,6 +56,8 @@ urlpatterns = [
     path('iranianlogin', authview.iranianloginpage, name='iranianlogin'),
     path('hausalogin', authview.hausaloginpage, name='hausalogin'),
     path('swahililogin', authview.swahililoginpage, name='swahililogin'),
+    path('javaneselogin', authview.javaneseloginpage, name='javaneselogin'),
+    path('italianlogin', authview.italianloginpage, name='italianlogin'),
     path('logout',authview.logoutpage,name='logoutpage'),
     path('add-to-cart',cartview.addtocart,name='addtocart'),
     path('cart',cartview.showCart,name='cart'),
@@ -80,6 +84,8 @@ urlpatterns = [
     path('iraniancart', cartview.iraniancart, name='iraniancart'),
     path('hausacart', cartview.hausacart, name='hausacart'),
     path('swahilicart', cartview.swahilicart, name='swahilicart'),
+    path('javanesecart', cartview.javanesecart, name='javanesecart'),
+    path('italiancart', cartview.italiancart, name='italiancart'),
     path('update-cart',cartview.updatecart,name="updatecart"),
     path('delete-cart-item',cartview.deletecartitem,name="deletecartitem"),
     path('checkout',checkview.checkout,name='checkout'),
@@ -138,6 +144,8 @@ urlpatterns = [
     path('iranian', iranianview.iranianhome, name='iranian'),
     path('hausa', hausaview.hausahome, name='hausa'),
     path('swahili', swahiliview.swahilihome, name='swahili'),
+    path('javanese', javaneseview.javanesehome, name='javanese'),
+    path('italian', italianview.italianhome, name='italian'),
     path('details',details,name='details'),
     path('chinese-details',chineseview.chinesedetails,name='chinese-details'),
     path('hindi-details',hindiview.hindidetails,name='hindi-details'),
@@ -162,6 +170,8 @@ urlpatterns = [
     path('iraniandetails', iranianview.iraniandetails, name='iraniandetails'),
     path('hausadetails', hausaview.hausadetails, name='hausadetails'),
     path('swahilidetails', swahiliview.swahilidetails, name='swahilidetails'),
+    path('javanesedetails', javaneseview.javanesedetails, name='javanesedetails'),
+    path('italiandetails', italianview.italiandetails, name='italiandetails'),
     path('getpatch',getpatch,name='getpatch'),
     path('chinese-getpatch',chineseview.chinesegetpatch,name='chinese-getpatch'),
     path('hindi-getpatch',hindiview.hindigetpatch,name='hindi-getpatch'),
@@ -186,6 +196,8 @@ urlpatterns = [
     path('iraniangetpatch', iranianview.iraniangetpatch, name='iraniangetpatch'),
     path('hausagetpatch', hausaview.hausagetpatch, name='hausagetpatch'),
     path('swahiligetpatch', swahiliview.swahiligetpatch, name='swahiligetpatch'),
+    path('javanesegetpatch', javaneseview.javanesegetpatch, name='javanesegetpatch'),
+    path('italiangetpatch', italianview.italiangetpatch, name='italiangetpatch'),
     path('usepatch',usepatch,name='usepatch'),
     path('chinese-usepatch',chineseview.chineseusepatch,name='chinese-usepatch'),
     path('hindi-usepatch',hindiview.hindiusepatch,name='hindi-usepatch'),
@@ -210,6 +222,8 @@ urlpatterns = [
     path('iranianusepatch', iranianview.iranianusepatch, name='iranianusepatch'),
     path('hausausepatch', hausaview.hausausepatch, name='hausausepatch'),
     path('swahiliusepatch', swahiliview.swahiliusepatch, name='swahiliusepatch'),
+    path('javaneseusepatch', javaneseview.javaneseusepatch, name='javaneseusepatch'),
+    path('italianusepatch', italianview.italianusepatch, name='italianusepatch'),
     path('hindicomment/<int:id>',hindiview.hindicomment,name='hindicomment'),
     path('hindiaddComment/<int:id>',hindiview.hindiaddcomment,name='hindiaddComment'),
     path('spanishcomment/<int:id>',spanishview.spanishcomment,name='spanishcomment'),
@@ -254,5 +268,9 @@ urlpatterns = [
     path('hausaaddcomment/<int:id>', hausaview.hausaaddcomment, name='hausaaddcomment'),
     path('swahilicomment/<int:id>', swahiliview.swahilicomment, name='swahilicomment'),
     path('swahiliaddcomment/<int:id>', swahiliview.swahiliaddcomment, name='swahiliaddcomment'),
+    path('javanesecomment/<int:id>', javaneseview.javanesecomment, name='javanesecomment'),
+    path('javaneseaddcomment/<int:id>', javaneseview.javaneseaddcomment, name='javaneseaddcomment'),
+    path('italiancomment/<int:id>', italianview.italiancomment, name='italiancomment'),
+    path('italianaddcomment/<int:id>', italianview.italianaddcomment, name='italianaddcomment'),
     path('shopping',shopping,name='shopping'),
 ]
