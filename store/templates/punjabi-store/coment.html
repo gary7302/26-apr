@@ -1,0 +1,39 @@
+{% extends 'punjabi-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form method="post" action="{% url 'punjabiaddcomment' eachProduct.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit" >ਟਿੱਪਣੀ ਸ਼ਾਮਲ ਕਰੋ</button>
+        <input type="hidden" name="product_id" value="{{eachProduct.id}}">
+      {{ form.as_p }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h4>ਸਾਰੀਆਂ ਟਿੱਪਣੀਆਂ ਦੇਖੋ</h4>
+      <hr>
+      {% if not eachProduct.punjabicomment.all %}
+        <p>ਅਜੇ ਤੱਕ ਕੋਈ ਟਿੱਪਣੀ ਨਹੀਂ...ਪਹਿਲੀ ਟਿੱਪਣੀ ਲਿਖੋ</p>
+      {% else %}
+        {% for comment in eachProduct.punjabicomment.all %}
+      <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
+          <h5>{{ comment.commenter_name }}</h5>
+          <h6>{{ comment.comment_body }}</h6>
+      <p>{{ comment.created_at }}</p>
+      <hr>
+
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+<script>
+<!--  var commentButton=document.getElementById('addComment');-->
+</script>
+
+{% endblock scripts %}

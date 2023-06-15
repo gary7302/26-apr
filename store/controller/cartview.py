@@ -161,3 +161,7 @@ def javanesecart(request):
 @login_required(login_url='italianlogin')
 def italiancart(request):
     return render(request,'italian-store/cart.html')
+
+@login_required(login_url='punjabilogin')
+def punjabicart(request):
+    return render(request,'punjabi-store/cart.html')

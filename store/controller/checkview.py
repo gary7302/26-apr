@@ -351,3 +351,13 @@ def italianmaincheckout(request):
 
     context={'total_price':total_price,'userprofile':userprofile}
     return render(request,'italian-store/maincheckout.html',context)
+
+@login_required(login_url='punjabilogin')
+def punjabimaincheckout(request):
+
+    total_price=3
+
+    userprofile=Profile.objects.filter(user=request.user).first()
+
+    context={'total_price':total_price,'userprofile':userprofile}
+    return render(request,'punjabi-store/maincheckout.html',context)
