@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <form method="post" action="">
+            <form method="post" action="{% url 'loginpage' %}">
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="" class="form-label">Enter username</label>

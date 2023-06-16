@@ -3,6 +3,7 @@ from django.contrib import messages
 from store.forms import *
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
+from django.views.decorators.csrf import csrf_protect
 
 def register(request):
     form=CustomUserForm()

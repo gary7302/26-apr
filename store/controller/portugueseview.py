@@ -6,7 +6,7 @@ from datetime import datetime
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
-
+from django.views.decorators.csrf import csrf_protect
 def portuguesehome(request):
     category=PortugueseCategory.objects.all()
     return render(request,'portuguese-store/index.html',{'category':category})

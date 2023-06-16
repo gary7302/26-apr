@@ -6,6 +6,7 @@ from datetime import datetime
 from django.contrib.auth import login,logout,authenticate
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 
 def turkishhome(request):
     category=TurkishCategory.objects.all()
