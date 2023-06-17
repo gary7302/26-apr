@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'kannada' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'kannada' %}">ಮನೆ</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >ಲಾಗ್ ಔಟ್</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'kannadalogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'kannadalogin' %}" >ಲಾಗಿನ್ ಮಾಡಿ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'kannadaregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'kannadaregister' %}" >ಸೈನ್ ಅಪ್</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           ಭಾಷೆಗಳು
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           ಕ್ಯಾನ್ಸರ್ ವಿಧಗಳು
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'kannadagetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'kannadagetpatch' %}">ಪ್ಯಾಚ್ ಪಡೆಯಿರಿ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'kannadausepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'kannadausepatch' %}" >ಪ್ಯಾಚ್ ಬಳಸಿ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'kannadadetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'kannadadetails' %}">ಸಿದ್ಧಾಂತ</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'kannadacart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'kannadacart' %}">ಕಾರ್ಟ್</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

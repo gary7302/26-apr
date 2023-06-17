@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'korean' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'korean' %}">집</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >로그 아웃</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'koreanlogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'koreanlogin' %}" >로그인</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'koreanregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'koreanregister' %}" >가입하기</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           언어
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           암 유형
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'koreangetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'koreangetpatch' %}">패치 받기</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'koreanusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'koreanusepatch' %}" >패치 사용</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'koreandetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'koreandetails' %}">이론</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'koreancart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'koreancart' %}">카트</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

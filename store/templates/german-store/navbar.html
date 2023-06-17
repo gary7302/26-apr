@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'german' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'german' %}">Heim</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Ausloggen</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'germanlogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'germanlogin' %}" >Anmeldung</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'germanregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'germanregister' %}" >registrieren</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           Sprachen
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           Krebsarten
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'germangetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'germangetpatch' %}">Erhalten Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'germanusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'germanusepatch' %}" >Verwenden Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'germandetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'germandetails' %}">Theorie</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'germancart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'germancart' %}">Wagen</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

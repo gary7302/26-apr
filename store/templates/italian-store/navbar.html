@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'italian' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'italian' %}">Casa</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,7 +19,7 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Disconnettersi</a></li>
           </ul>
         </li>
         {% else %}
@@ -27,12 +27,12 @@
           <a class="nav-link active" href="{% url 'italianlogin' %}" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'italianregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'italianregister' %}" >Iscrizione</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           Le lingue
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           Tipi di cancro
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'italiangetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'italiangetpatch' %}">OttieniPatch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'italianusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'italianusepatch' %}" >Usa Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'italiandetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'italiandetails' %}">Teoria</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'italiancart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'italiancart' %}">Carrello</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

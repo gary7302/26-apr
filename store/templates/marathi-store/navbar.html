@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'marathi' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'marathi' %}">मुख्यपृष्ठ</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >बाहेर पडणे</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'marathilogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'marathilogin' %}" >लॉगिन करा</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'marathiregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'marathiregister' %}" >साइनअप करा</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           भाषा
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           कर्करोगाचे प्रकार
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'marathigetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'marathigetpatch' %}">पॅच मिळवा</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'marathiusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'marathiusepatch' %}" >पॅच वापरा</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'marathidetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'marathidetails' %}">सिद्धांत</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'marathicart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'marathicart' %}">खरेदी कार्ट</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'iranian' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'iranian' %}">صفحه اصلی</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >خروج</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'iranianlogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'iranianlogin' %}" >وارد شدن</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'iranianregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'iranianregister' %}" >ثبت نام</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           زبان ها
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           انواع سرطان
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'iraniangetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'iraniangetpatch' %}">پچ را دریافت کنید</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'iranianusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'iranianusepatch' %}" >از پچ استفاده کنید</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'iraniandetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'iraniandetails' %}">تئوری</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'iraniancart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'iraniancart' %}">سبد خرید</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->
