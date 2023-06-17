@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'tagalog' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'tagalog' %}">Bahay</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Mag-logout</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tagaloglogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'tagaloglogin' %}" >Mag log in</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tagalogregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'tagalogregister' %}" >Mag-sign Up</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           Mga wika
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -63,14 +63,14 @@
             <li><a class="dropdown-item" href="{% url 'javanese' %}">Javanese</a></li>
             <li><a class="dropdown-item" href="{% url 'italian' %}">Italian</a></li>
             <li><a class="dropdown-item" href="{% url 'punjabi' %}">Punjabi</a></li>
-            <li><a class="dropdown-item" href="/">Kannada</a></li>
+            <li><a class="dropdown-item" href="{% url 'kannada' %}">Kannada</a></li>
             <li><a class="dropdown-item" href="/">Gujarati</a></li>
             <li><a class="dropdown-item" href="/">Thai</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           Mga Uri ng Kanser
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,13 +110,13 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tagaloggetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'tagaloggetpatch' %}">Kunin ang Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tagalogusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'tagalogusepatch' %}" >Gamitin ang Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tagalogdetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'tagalogdetails' %}">Teorya</a>
         </li>
 
 

@@ -165,3 +165,7 @@ def italiancart(request):
 @login_required(login_url='punjabilogin')
 def punjabicart(request):
     return render(request,'punjabi-store/cart.html')
+
+@login_required(login_url='kannadalogin')
+def kannadacart(request):
+    return render(request,'kannada-store/cart.html')

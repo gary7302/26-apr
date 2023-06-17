@@ -32,7 +32,7 @@ def home(request):
 #         messages.warning(request,'No such category found')
 #         return redirect('home')
 
-@login_required(login_url='loginpage')
+
 def comment(request,id):
     eachProduct = Category.objects.get(id=id)
 
@@ -40,7 +40,7 @@ def comment(request,id):
     form = CommentForm()
     context={'form':form,'eachProduct':eachProduct}
     return render(request,'store/coment.html',context)
-
+@login_required(login_url='loginpage')
 def addComment(request,id):
     if request.method == "POST":
         form = CommentForm(request.POST, request.FILES)

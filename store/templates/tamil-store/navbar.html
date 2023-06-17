@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'tamil' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'tamil' %}">வீடு</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >வெளியேறு</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tamillogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'tamillogin' %}" >உள்நுழைய</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tamilregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'tamilregister' %}" >பதிவு</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           மொழிகள்
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -63,14 +63,14 @@
             <li><a class="dropdown-item" href="{% url 'javanese' %}">Javanese</a></li>
             <li><a class="dropdown-item" href="{% url 'italian' %}">Italian</a></li>
             <li><a class="dropdown-item" href="{% url 'punjabi' %}">Punjabi</a></li>
-            <li><a class="dropdown-item" href="/">Kannada</a></li>
+            <li><a class="dropdown-item" href="{% url 'kannada' %}">Kannada</a></li>
             <li><a class="dropdown-item" href="/">Gujarati</a></li>
             <li><a class="dropdown-item" href="/">Thai</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           புற்றுநோய் வகைகள்
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tamilgetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'tamilgetpatch' %}">பேட்ச் கிடைக்கும்</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tamilusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'tamilusepatch' %}" >பேட்ச் பயன்படுத்தவும்</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tamildetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'tamildetails' %}">கோட்பாடு</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'tamilcart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'tamilcart' %}">வணிக கூடை</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

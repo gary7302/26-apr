@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'nigerian' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'nigerian' %}">Gida</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Fita</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nigerianlogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'nigerianlogin' %}" >Shiga</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nigerianregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'nigerianregister' %}" >Shiga</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           Harsuna
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -63,14 +63,14 @@
             <li><a class="dropdown-item" href="{% url 'javanese' %}">Javanese</a></li>
             <li><a class="dropdown-item" href="{% url 'italian' %}">Italian</a></li>
             <li><a class="dropdown-item" href="{% url 'punjabi' %}">Punjabi</a></li>
-            <li><a class="dropdown-item" href="/">Kannada</a></li>
+            <li><a class="dropdown-item" href="{% url 'kannada' %}">Kannada</a></li>
             <li><a class="dropdown-item" href="/">Gujarati</a></li>
             <li><a class="dropdown-item" href="/">Thai</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           Nau'in Cancer
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nigeriangetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'nigeriangetpatch' %}">Samun Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nigerianusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'nigerianusepatch' %}" >Yi amfani da Patch</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nigeriandetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'nigeriandetails' %}">Ka'idar</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nigeriancart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'nigeriancart' %}">Katin</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

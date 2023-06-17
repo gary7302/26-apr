@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'vietnamese' %}">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'vietnamese' %}">Trang chủ</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,15 +19,15 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Đăng xuất</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'vietnameselogin' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'vietnameselogin' %}" >Đăng nhập</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'vietnameseregister' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'vietnameseregister' %}" >Đăng ký</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
@@ -63,14 +63,14 @@
             <li><a class="dropdown-item" href="{% url 'javanese' %}">Javanese</a></li>
             <li><a class="dropdown-item" href="{% url 'italian' %}">Italian</a></li>
             <li><a class="dropdown-item" href="{% url 'punjabi' %}">Punjabi</a></li>
-            <li><a class="dropdown-item" href="/">Kannada</a></li>
+            <li><a class="dropdown-item" href="{% url 'kannada' %}">Kannada</a></li>
             <li><a class="dropdown-item" href="/">Gujarati</a></li>
             <li><a class="dropdown-item" href="/">Thai</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           Loại ung thư
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'vietnamesegetpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'vietnamesegetpatch' %}">Nhận bản vá</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'vietnameseusepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'vietnameseusepatch' %}" >Sử dụng bản vá</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'vietnamesedetails' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'vietnamesedetails' %}">Lý thuyết</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'vietnamesecart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'vietnamesecart' %}">Xe đẩy</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

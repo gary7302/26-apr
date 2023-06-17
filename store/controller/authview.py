@@ -4,6 +4,7 @@ from store.forms import *
 from django.contrib.auth import authenticate,login,logout
 from django.db import IntegrityError
 from django.views.decorators.csrf import csrf_protect
+from django.http import HttpResponseForbidden
 
 def register(request):
     form=CustomUserForm()
@@ -27,6 +28,19 @@ def loginpage(request):
     else:
 
         if request.method == 'POST':
+            origin = request.META.get('HTTP_ORIGIN')
+            trusted_origins = ['https://www.cancerpatch.org',"http://127.0.0.1:8000"]  # Add the trusted origins here
+
+            if origin not in trusted_origins:
+                return HttpResponseForbidden("Origin not allowed")
+
+            # Process the CSRF token
+            csrf_token = request.COOKIES.get('csrftoken')
+
+            # Check CSRF verification
+            if not csrf_token:
+                return HttpResponseForbidden("CSRF verification failed")
+
             name = request.POST.get('username')
             passwd = request.POST.get('password')
             user = authenticate(request, username=name, password=passwd)
@@ -565,3 +579,23 @@ def punjabiloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/punjabilogin')
         return render(request, 'punjabi-store/auth/login.html')
+
+def kannadaloginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/kannada')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/kannada')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/kannadalogin')
+        return render(request, 'kannada-store/auth/login.html')
