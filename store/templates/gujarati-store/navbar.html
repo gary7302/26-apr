@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="{% url 'hausa' %}">Gida</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'gujarati' %}">હોમ</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Fita</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >લૉગ આઉટ</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'hausalogin' %}" >Shiga</a>
+          <a class="nav-link active" href="{% url 'gujaratilogin' %}" >પ્રવેશ કરો</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'hausaregister' %}" >rajista</a>
+          <a class="nav-link active" href="{% url 'gujaratiregister' %}" >સાઇન અપ કરો</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Harsuna
+           ભાષાઓ
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Nau'in Cancer
+           કેન્સરના પ્રકારો
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'hausagetpatch' %}">Samun Patch</a>
+          <a class="nav-link active" href="{% url 'gujaratigetpatch' %}">પેચ મેળવો</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'hausausepatch' %}" >AmfaniPatch</a>
+          <a class="nav-link active" href="{% url 'gujaratiusepatch' %}" >પેચનો ઉપયોગ કરો</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'hausadetails' %}">Ka'idar</a>
+          <a class="nav-link active" href="{% url 'gujaratidetails' %}">થિયરી</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'hausacart' %}">Katin</a>
+          <a class="nav-link active" href="{% url 'gujaraticart' %}">કાર્ટ</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

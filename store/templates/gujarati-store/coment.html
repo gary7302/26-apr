@@ -1,0 +1,39 @@
+{% extends 'gujarati-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form method="post" action="{% url 'gujaratiaddcomment' eachProduct.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit" >ટિપ્પણી ઉમેરો</button>
+        <input type="hidden" name="product_id" value="{{eachProduct.id}}">
+      {{ form.as_p }}
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h4>બધી ટિપ્પણીઓ જુઓ</h4>
+      <hr>
+      {% if not eachProduct.gujaraticomment.all %}
+        <p>હજુ સુધી કોઈ ટિપ્પણી નથી...પ્રથમ ટિપ્પણી લખો</p>
+      {% else %}
+        {% for comment in eachProduct.gujaraticomment.all %}
+      <img src="{{ comment.comment_image.url }}" height="80px" width="80px" />
+          <h5>{{ comment.commenter_name }}</h5>
+          <h6>{{ comment.comment_body }}</h6>
+      <p>{{ comment.created_at }}</p>
+      <hr>
+
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+<script>
+<!--  var commentButton=document.getElementById('addComment');-->
+</script>
+
+{% endblock scripts %}

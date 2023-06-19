@@ -169,3 +169,7 @@ def punjabicart(request):
 @login_required(login_url='kannadalogin')
 def kannadacart(request):
     return render(request,'kannada-store/cart.html')
+
+@login_required(login_url='gujaratilogin')
+def gujaraticart(request):
+    return render(request,'gujarati-store/cart.html')
