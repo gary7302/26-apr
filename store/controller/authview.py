@@ -619,3 +619,23 @@ def gujaratiloginpage(request):
                 messages.error(request, 'Invalid username or password')
                 return redirect('/gujaratilogin')
         return render(request, 'gujarati-store/auth/login.html')
+
+def thailoginpage(request):
+    if request.user.is_authenticated:
+        messages.warning(request,'You are already logged in')
+        return redirect('/thai')
+    else:
+
+        if request.method == 'POST':
+            name = request.POST.get('username')
+            passwd = request.POST.get('password')
+            user = authenticate(request, username=name, password=passwd)
+
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Logged in successfully')
+                return redirect('/thai')
+            else:
+                messages.error(request, 'Invalid username or password')
+                return redirect('/thailogin')
+        return render(request, 'thai-store/auth/login.html')

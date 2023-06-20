@@ -173,3 +173,7 @@ def kannadacart(request):
 @login_required(login_url='gujaratilogin')
 def gujaraticart(request):
     return render(request,'gujarati-store/cart.html')
+
+@login_required(login_url='thailogin')
+def thaicart(request):
+    return render(request,'thai-store/cart.html')

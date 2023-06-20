@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from .models import User,ChinaComment,HindiComment,Comment,SpanishComment,FrenchComment,ArabicComment,BengaliComment,RussianComment,PortugueseComment,UrduComment,IndonesianComment,GermanComment,JapaneseComment,NigerianComment,MarathiComment,TeluguComment,TurkishComment,TamilComment,VietnameseComment,TagalogComment,KoreanComment,IranianComment,HausaComment,SwahiliComment,JavaneseComment,ItalianComment,PunjabiComment,KannadaComment,GujaratiComment
+from .models import User,ChinaComment,HindiComment,Comment,SpanishComment,FrenchComment,ArabicComment,BengaliComment,RussianComment,PortugueseComment,UrduComment,IndonesianComment,GermanComment,JapaneseComment,NigerianComment,MarathiComment,TeluguComment,TurkishComment,TamilComment,VietnameseComment,TagalogComment,KoreanComment,IranianComment,HausaComment,SwahiliComment,JavaneseComment,ItalianComment,PunjabiComment,KannadaComment,GujaratiComment,ThaiComment
 from django import forms
 
 class CustomUserForm(UserCreationForm):
@@ -269,4 +269,12 @@ class GujaratiCommentForm(forms.Form):
     comment_image=forms.ImageField(required=False)
     class Meta:
         model=GujaratiComment
+        fields=['comment_body','comment_image']
+
+class ThaiCommentForm(forms.Form):
+    comment_body = forms.CharField(widget=forms.Textarea)
+    #product_id = forms.IntegerField(widget=forms.HiddenInput)
+    comment_image=forms.ImageField(required=False)
+    class Meta:
+        model=ThaiComment
         fields=['comment_body','comment_image']

@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link  active" aria-current="page" href="/">Home</a>
+          <a class="nav-link  active" aria-current="page" href="{% url 'thai' %}">บ้าน</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -19,20 +19,20 @@
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'logoutpage' %}" >ออกจากระบบ</a></li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'loginpage' %}" >Login</a>
+          <a class="nav-link active" href="{% url 'thailogin' %}" >เข้าสู่ระบบ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'register' %}" >SignUp</a>
+          <a class="nav-link active" href="{% url 'thairegister' %}" >ลงชื่อ</a>
         </li>
         {% endif %}
         <li class="nav-item dropdown" style="height:cover">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           Languages
+           ภาษา
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link  active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-           CancerTypes
+           ประเภทมะเร็ง
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Breast</a></li>
@@ -110,18 +110,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'getpatch' %}">GetPatch</a>
+          <a class="nav-link active" href="{% url 'thaigetpatch' %}">รับแพทช์</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'usepatch' %}" >UsePatch</a>
+          <a class="nav-link active" href="{% url 'thaiusepatch' %}" >ใช้แพทช์</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'details' %}">Theory</a>
+          <a class="nav-link active" href="{% url 'thaidetails' %}">ทฤษฎี</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'cart' %}">Cart</a>
+          <a class="nav-link active" href="{% url 'thaicart' %}">รถเข็น</a>
         </li>
 <!--        <li class="nav-item">-->
 <!--          <a class="nav-link active" href="{% url 'shopping' %}">紫薇團購</a>-->

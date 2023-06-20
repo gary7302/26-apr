@@ -1,0 +1,42 @@
+{% extends 'thai-store/layouts/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="" class="form-label">ป้อนชื่อผู้ใช้ต้องเป็นอีเมล</label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                    <label class="text-danger">{{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">กรอกอีเมล์ของคุณ</label>
+                    {{form.email}}
+                    {% if form.errors.email %}
+                    <label class="text-danger">{{ form.errors.email}}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">ป้อนรหัสผ่านของคุณ</label>
+                    {{form.password1}}
+                    {% if form.errors.password1 %}
+                    <label class="text-danger">{{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">ยืนยันรหัสผ่านของคุณ</label>
+                    {{form.password2}}
+                    {% if form.errors.password2 %}
+                    <label class="text-danger">{{ form.errors.password2}}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">ส่ง</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
